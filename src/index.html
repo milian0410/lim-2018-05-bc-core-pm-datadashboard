@@ -8,7 +8,20 @@
   <title>Empezando el avance</title>
     <body>
     <h1>hola mundo</h1>
-    <P>Cuentanos</P>
+    <p id="test"></p>
+
+    <form name="formulario" >
+      <!-- Campo de texto combinado con lista de opciones -->
+      <input type="text" list="items">
+      <!-- Lista de opciones -->
+      <datalist id="items">
+        <option value="lima" id="1">lima</option>
+        <option value="Chile" id="2">Chile</option>
+        <option value="Brazil"id="3">Brazil</option>
+        <option value="Mexico" id="4">Mexico</option>
+      </datalist>
+    </form>
+    <script>src="http://127.0.0.1:5500/data/cohorts.json"</script>
     <script src="main.js"></script>
   </body>
 </html>
