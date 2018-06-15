@@ -1,21 +1,25 @@
- let one="";
- const selection=document.getElementById("listcohorts");
+  let one="";
+  const selection=document.getElementById("listcohorts");
  
-fetch('http://127.0.0.1:5500/data/cohorts.json')
-  .then(function(response)
-   {
-    return response.json();
-   })
-  
-  .then(function(data) 
-   {
-    for(let i=0; i<data.length; i++)
-    {
+  fetch('http://127.0.0.1:5500/data/cohorts.json')
+    .then(function(response)
+      {
+      return response.json();
+      })
+    .then(function(data) 
+      {
+      for(let i=0; i<data.length; i++)
+      {
       let one =(data[i].id);
+      }     
+  })    
+  
+   let listLima = document.getElementById("list");
+   if(e.target.value === "lim-2018-03-pre-core-pw"){
+   listLima.innerHTML+= 'http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json'
       selection.innerHTML+="<option value="+data[i].id+" >"+one+"</option>";
-      document.getElementsByTagName("option");
     }     
-   })  
+    
   
   selection.addEventListener("change", (event)=>
 
@@ -25,7 +29,6 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
     
 
         fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
-
         .then(function(response)
          {
           return response.json();
@@ -82,12 +85,8 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
       let one =(data[i].name);
       document.getElementById("listusers").innerHTML+="<option value="+i+">"+one+"</option>";
     }
-    
-
-
-    
-  })    
+  })   */ 
   
-  */
+
 
  
