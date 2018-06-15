@@ -2,6 +2,7 @@
 
 
 ## ENTREVISTAS
+Principales usuarias: Trainers Manager. 
 
 Para llevar a cabo el prototipado del proyecto se entrevistó a las Trainers Manager (TI):  
 
