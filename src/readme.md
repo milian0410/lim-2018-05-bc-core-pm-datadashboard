@@ -1,7 +1,7 @@
 # Data Dashboard
 
 
-Los Trainers Manager actualmente realizan la información en google docs, lo cual es poco eficiente por la cantidad de postulantes que aplicaron.
+Los Trainers Manager actualmente realizan la información en google docs, lo cual es poco eficiente por la cantidad de postulantes que aplicaron..
 La paágina web que estamos creando se entrega los datos de forma más eficiente a través de un formato que puedan visualizar y manipular la estadística en los cursos y las estudiantes.
 
 ## ENTREVISTAS
