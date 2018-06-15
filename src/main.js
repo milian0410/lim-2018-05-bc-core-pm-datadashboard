@@ -11,22 +11,16 @@
       for(let i=0; i<data.length; i++)
       {
       let one =(data[i].id);
+      selection.innerHTML+="<option value="+data[i].id+" >"+one+"</option>";
+      document.getElementsByTagName("option");
       }     
   })    
   
-   let listLima = document.getElementById("list");
-   if(e.target.value === "lim-2018-03-pre-core-pw"){
-   listLima.innerHTML+= 'http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json'
-      selection.innerHTML+="<option value="+data[i].id+" >"+one+"</option>";
-    }     
-    
+   selection.addEventListener("change", (event)=> {
+   console.log(selection.value);
+   if(selection.value === "lim-2018-03-pre-core-pw"){
   
-  selection.addEventListener("change", (event)=>
-
-  {console.log(selection.value);
-    if(selection.value==="lim-2018-03-pre-core-pw"){
-     
-    
+        
 
         fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
         .then(function(response)
