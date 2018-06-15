@@ -1,27 +1,19 @@
- let one="";
- const selection=document.getElementById("listcohorts");
+  let one="";
+  const selection=document.getElementById("listcohorts");
  
-fetch('http://127.0.0.1:5500/data/cohorts.json')
-  .then(function(response)
-   {
-    return response.json();
-   })
-  
-  .then(function(data) 
-   {
-    for(let i=0; i<data.length; i++)
-    {
+  fetch('http://127.0.0.1:5500/data/cohorts.json')
+    .then(function(response)
+      {
+      return response.json();
+      })
+    .then(function(data) 
+      {
+      for(let i=0; i<data.length; i++)
+      {
       let one =(data[i].id);
-
-      
-    }     
+      }     
   })    
   
-  selectionOption.setAttribute("value","listcohorts[i]");
- // console.log(listcohorts.value);
-  selectionOption.addEventListener("change", (event)=>{
-  //  console.log(event.target.value);
-   })
    let listLima = document.getElementById("list");
    if(e.target.value === "lim-2018-03-pre-core-pw"){
    listLima.innerHTML+= 'http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json'
