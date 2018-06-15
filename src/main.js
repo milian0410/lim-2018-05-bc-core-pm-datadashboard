@@ -1,5 +1,7 @@
  let one="";
+ let inarray="";
  const selection=document.getElementById("listcohorts");
+ const selectionusers=document.getElementById("listusers");
  
 fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function(response)
@@ -19,7 +21,8 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
   
   selection.addEventListener("change", (event)=>
 
-  {console.log(selection.value);
+  {
+    console.log(selection.value);
     if(selection.value==="lim-2018-03-pre-core-pw"){
      
     
@@ -35,7 +38,7 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
             for(let i=0; i<data.length; i++)
             {
               let one =(data[i].name);
-              document.getElementById("listusers").innerHTML+="<option value="+i+">"+one+"</option>";
+              selectionusers.innerHTML+="<option value="+i+">"+one+"</option>";
               document.getElementById("prueba").innerHTML="Aquí van porcentajes";
             }  
          })
@@ -43,7 +46,7 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
         {
         
         document.getElementById("prueba").innerHTML="Aún no hay datos";
-        document.getElementById("listusers").innerHTML+="<option value="+i+">"+"aun no hay datos"+"</option>";
+        
         } 
       else{
         
@@ -51,6 +54,23 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
     
        
   }) 
+  selectionusers.addEventListener("change", (event)=>{
+    fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+    .then(function(response)
+     {
+      return response.json();
+     })        
+    .then(function(data)
+     { 
+      let inarray=Object.values(data)
+
+          
+          console.log(inarray);
+
+          
+      })
+
+  })
   
   
   
