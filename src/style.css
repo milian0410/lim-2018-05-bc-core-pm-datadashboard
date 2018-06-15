@@ -21,11 +21,16 @@ header img {
 }
 #listusers{
     margin-top:20%;
-    
     height: 60%;
     width:100%;
 }
-
+.estadistica {
+    width: 60%;
+    height: 30%;
+}
+.modelo {
+    text-align: center;
+}
 
 #main{
     float: left;
