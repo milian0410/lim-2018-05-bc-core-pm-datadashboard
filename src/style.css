@@ -1,46 +1,52 @@
-header img {
-    height: 50%;
-    width: 30%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
     
 }
-.logo {
+.logo,img{
     width: 100%;
     height: 40%;
+    margin: 0 auto;
     text-align: center;
     background-color: #FFE521;
 }
-#left{
-    float: left;
-    width: 30%;
-    height: 500px;
-    background: beige;
-}
-#listcohorts{
-    margin-top:20%;
-    width:100%;
-}
-#listusers{
-    margin-top:20%;
-    height: 60%;
-    width:100%;
-}
-.estadistica {
-    width: 60%;
-    height: 30%;
-}
-.modelo {
-    text-align: center;
+.container{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    
 }
 
-#main{
+.firstblock{
+    
+    border: 5px solid black;
+    width: 40%;
     float: left;
-    width: 70%;
-    height: 500px;
-    background: #909090	;
 }
-#footer{
+#listcohorts,#listusers,h1{
+    
+    width: 90%;
+   margin: 0 auto;
+   margin-left: 5%;   
+
+   
+}
+#listusers{
+    height:550px;
+  }
+.secondblock{
+    width: 60%;
     float: left;
-    width: 100%;
-    height: 20px;
-    background: black;
+    background-color: #909090 	;
+}
+@media only screen and (max-width: 600px){
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        
+    }  
 }

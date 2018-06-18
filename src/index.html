@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header>
-      <div class="logo">
-        <img src="../img/LaboratoriaLogo1.png" alt="LaboratorioLogo" />
+   <div class="logo">
+    <img src="../img/LaboratoriaLogo1.png" alt="logo laboratoria"> 
+   </div> 
+ <!--es un div general(class=container) para la facilidad responsive-->
+    <div class="container">
+      <div class="firstblock">
+        <header>
+            <h1></h1>
+        <br>
+        <br>
+        <br>
+        <br>
+              
+        </header>
+        <section >
+         
+            <select id="listcohorts"> 
+              <!--aqui van las opciones creadas desde main.js-->
+            </select>
+            <br>
+            <br>
+            <select id="listusers" multiple> 
+              <!--aqui van las opciones creadas desde main.js-->
+           </select> 
+        </section>   
+      </div>
+      <div class="secondblock">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        <p id="prueba">aqui</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+         
+        
+        
+        <script>src="http://127.0.0.1:5500/data/cohorts.json"</script>
+        <script src="main.js"></script>
     </div>
-  </header>
-    <nav id="left">
-    <select id="listcohorts"> 
-    </select>
-    <select id="listusers" multiple> 
-    </select>
-    </nav>
-  <main id="main">
-    <section>
-      <p id="prueba">aqui</p>
-      <div class="modelo">
-        <img class="estadistica" src="../img/Captura2.png" alt="estadistica" />
-    </div>
-    </section>
-  </main>
-  <footer id="footer">FINAL</footer>
-    <script>src="http://127.0.0.1:5500/data/cohorts.json"</script>
-    <script src="main.js"></script>
   </body>
 </html>
