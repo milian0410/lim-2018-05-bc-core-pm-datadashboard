@@ -1,4 +1,5 @@
- let one="";
+ 
+ let name="";
  let inarray="";
  const selection=document.getElementById("listcohorts");
  const selectionusers=document.getElementById("listusers");
@@ -12,8 +13,8 @@
       {
       for(let i=0; i<data.length; i++)
       {
-      let one =(data[i].id);
-      selection.innerHTML+="<option value="+data[i].id+" >"+one+"</option>";
+      name =(data[i].id);
+      selection.innerHTML+="<option value="+name+" >"+name+"</option>";
       document.getElementsByTagName("option");
       }     
   })    
@@ -21,26 +22,18 @@
   selection.addEventListener("change", (event)=>
 
   {
-    console.log(selection.value);
-    if(selection.value==="lim-2018-03-pre-core-pw"){
-     
-    
-
-        fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
+    fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
         .then(function(response)
          {
           return response.json();
          })        
-        .then(function(data)
+        .then(function(infousers)
          { 
-            for(let i=0; i<data.length; i++)
-            {
-              let one =(data[i].name);
-              selectionusers.innerHTML+="<option value="+i+">"+one+"</option>";
-              document.getElementById("prueba").innerHTML="Aquí van porcentajes";
-            }  
-         })
-        } else if(selection.value!=="lim-2018-03-pre-core-pw")
+           let student = data.computeUsersStats(infousers, progress, courses);
+           if(selection.value==="lim-2018-03-pre-core-pw"){
+            selectionusers.innerHTML="<option value="+name+" >"+student+"</option>";
+           } 
+           else if(selection.value!=="lim-2018-03-pre-core-pw")
         {
         
         document.getElementById("prueba").innerHTML="Aún no hay datos";
@@ -49,7 +42,18 @@
       else{
         
       } 
+         })
     
+        
+            /*for(let i=0; i<users.length; i++)
+            {
+              name =(users[i].name);
+              selectionusers.innerHTML+="<option value="+i+">"+one+"</option>";
+              document.getElementById("prueba").innerHTML="Aquí van porcentajes";
+            } */ 
+         
+       
+   
        
   }) 
   selectionusers.addEventListener("change", (event)=>{
