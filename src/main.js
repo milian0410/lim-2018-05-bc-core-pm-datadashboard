@@ -1,5 +1,27 @@
  
- let name="";
+function cargarJson(){
+  fetch('http://127.0.0.1:5500/data/cohorts.json')
+  .then(function(response){
+    return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    })
+}
+return cargarJson;
+
+
+
+ 
+/* fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
+  .then(function(response) {
+    return response.json();
+    })        
+  .then(function(infousers) {
+    console.log(infousers)
+    }) */
+
+ /* let name="";
  let inarray="";
  const selection=document.getElementById("listcohorts");
  const selectionusers=document.getElementById("listusers");
@@ -42,7 +64,7 @@
       else{
         
       } 
-         })
+         }) */
     
         
             /*for(let i=0; i<users.length; i++)
@@ -55,7 +77,7 @@
        
    
        
-  }) 
+/*   }) 
   selectionusers.addEventListener("change", (event)=>{
     fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then(function(response)
@@ -73,7 +95,7 @@
           
       })
 
-  })
+  }) */
   
   
   
