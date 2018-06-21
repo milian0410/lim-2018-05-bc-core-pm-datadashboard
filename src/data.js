@@ -23,3 +23,16 @@ window.computeUsersStats = computeUsersStats;
 window.sortUsers = sortUsers;
 window.processCohortData = processCohortData;
 window.filterUsers = filterUsers;
+
+fetch('http://127.0.0.1:5500/data/cohorts.json')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    for (let i = 0; i < data.length; i++) {
+      name = (data[i].id);
+      selection.innerHTML += "<option value=" + name + " >" + name + "</option>";
+      document.getElementsByTagName("option");
+      
+    }
+  })
