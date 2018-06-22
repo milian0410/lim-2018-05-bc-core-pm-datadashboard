@@ -18,7 +18,20 @@ fetch('../data/cohorts.json')
     }
   })
   
-  const AllData = (cb) => 
+  selection.addEventListener("change", (event) =>
+ {
+      if (selection.value === "lim-2018-03-pre-core-pw") {
+        AllData( (data) =>{
+         
+
+         let info = processCohortData  (data);
+        })
+          
+        }
+      
+      
+    })
+  const AllData = (Callback) => 
   {
     fetch ('../data/cohorts.json')
         .then (function (responseC) 
@@ -31,28 +44,14 @@ fetch('../data/cohorts.json')
                      {
                         Promise.all([ responseC.json(), responseU.json(), responseP.json()])
                             .then(data => {
-                                console.log(data);
                                 const [cohorts, users, progress] = data;
-                                cb(cohorts, users, progress);
+                                Callback(data);
                             })
                     })
             })
     })
 }
-selection.addEventListener("change", (event) =>
- {
-      if (selection.value === "lim-2018-03-pre-core-pw") {
-        AllData( (cohorts, users, progress) =>{
-          infotcohorst=cohorts;
-          infouser=users;
-          infoprogess=progress;
-          computeUsersStats (infousers, infoprogress, infoprogess)
-        })
-          
-        }
-      
-      
-    })
+
   
   
   selectionusers.addEventListener("change", (event)=>{
