@@ -16,6 +16,29 @@ body{
     text-align: center;
     background-color: #FFE521;
 }
+
+.boton-countries{
+    height: 5%;
+    width: 100%;
+    padding: 10px;
+    padding-left: 10%;
+}
+.boton-country{
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px 7px;
+    margin-right: 50px;
+    margin-left: 50px;
+    width: 150px;
+    
+}
+
+
+
+
+
+
 .container{
     height:1000px;
     width: 90%;
@@ -46,6 +69,65 @@ body{
     float: left;
     background-color: #828282 	;
 }
+
+/* diseño para ingresar usuario y pass de pass.html */
+.bodies {
+    padding: 0;
+    margin:0;
+    background-image: url(../img/fondo.jpg);
+    background-position: center center;
+    background-size:cover;
+    height: 100%;
+       
+}
+.entrar{
+    width: 320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 130px 30px;
+}
+
+.img-User{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+.usuario {
+    width: 265px;
+    padding:10px;
+    margin-bottom: 30px;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    float: left;
+    
+    
+}
+
+.boton {
+    border-radius: 3px;
+    background-color: pink;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px 7px;
+    margin-right: 50px;
+    margin-left: 50px;
+    width: 150px;
+    border-radius: 10px;
+    
+    
+
+}
+
 @media only screen and (max-width: 600px){
     .container{
         width: 100%;

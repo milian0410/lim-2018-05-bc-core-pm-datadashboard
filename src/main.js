@@ -56,6 +56,24 @@ selection.addEventListener("change", (event) => {
       })
   })
 
+const userName = document.getElementById(userName).value;
+const pass=document.getElementById(pass).value;
+const aceptar=document.getElementById(aceptar);
+
+aceptar.addEventListener(click, () => {
+  function validar(){
+  if(userName === "Alejandra" && pass==="12345"){
+   window.location="../data/index.html"
+  }
+  else{
+    alert("Ingrese usuario y password")
+  }
+}
+})
+return validar
+
+
+
 
   /* for (let i = 0; i < users.length; i++) {
     name = (users[i].name);
