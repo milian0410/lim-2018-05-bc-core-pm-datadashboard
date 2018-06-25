@@ -2,7 +2,8 @@
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
-  const AllData = (Callback) => 
+
+ const AllData = (Callback) => 
   {
     fetch ('../data/cohorts.json')
         .then (function (responseC) 
@@ -45,7 +46,7 @@ cohortdata=data[0];
 
          if(users.role="student")
             {
-              studentname =computeUsersStats (users, progress, courses);
+              studentname =processCohortData (data);
               selectionusers.innerHTML += "<option value=" + studentname+ " >" +studentname + "</option>";
             }
         })

@@ -2,15 +2,16 @@
 const computeUsersStats = (users, progress, courses) =>
 {
   usersWithStats=
-  [
-    "stats"=
+  [{
+    stats=
     {
-      "percent":{
+      percent:{
 
       }
+      
 
     }
-  ]
+  }]
   
   for (i = 0; i < username.length; i++) 
   {
@@ -28,17 +29,16 @@ const filterUsers = (users, search) => {
 }
 
 const processCohortData = (options) => {
+  courses=options[0].coursesIndex;
   users=options[1];
-  cohorts=options[0];
   progress=options[2];
-  return users;
-  console.log("primero usuarios"+users+"segunso grupo "+cohorts+"el progreso"+progress+"")
-  computeUsersStats (users, progress, courses) 
+ 
+  let compudetdata= computeUsersStats (users, progress, courses) ;
   
 }
-
+const generalstas=(users,progress)=>{}
 window.computeUsersStats = computeUsersStats;
 window.sortUsers = sortUsers;
 window.processCohortData = processCohortData;
 window.filterUsers = filterUsers;
-
+window.generalstas=generalstas;
