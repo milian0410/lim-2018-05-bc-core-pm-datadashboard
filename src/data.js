@@ -1,12 +1,23 @@
 
-const computeUsersStats = (users, progress, courses) => {
-const studentslist="";
-bucle:
-while (users.length >= 0) {
-  break;
-  console.log(users[0]);
-}
+const computeUsersStats = (users, progress, courses) =>
+{
+  usersWithStats=
+  [
+    "stats"=
+    {
+      "percent":{
+
+      }
+
+    }
+  ]
   
+  for (i = 0; i < username.length; i++) 
+  {
+      
+      
+  } 
+  return studentname
 }
 
 const sortUsers = (users, orderBy, orderDirection) => {
