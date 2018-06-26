@@ -1,5 +1,5 @@
 
-const computeUsersStats = (users, progress, courses) =>
+/*const computeUsersStats = (users, progress, courses) =>
 {
   usersWithStats=
   [{
@@ -35,10 +35,28 @@ const processCohortData = (options) => {
  
   let compudetdata= computeUsersStats (users, progress, courses) ;
   
+}*/
+const generalstas=(users,progress)=>{
+const generalusers=users;
+const generalprogress=progress;
+let total="";
+let respuesta="";
+console.log("entre a la funcion");
+
+   console.log( generalusers);
+   console.log( generalprogress);
+   
+  for (i = 0; i < generalprogress.length; i++){
+    total=progress[generalusers[i].id].intro.percent;
+    respuesta+=parseInt(total);
+  }console.log(respuesta);
+  console.log(generalprogress[generalusers[i].id].intro.percent);
+
+return console.log(respuesta);
+console.log(generalprogress[generalusers[i].id].intro.percent);
 }
-const generalstas=(users,progress)=>{}
-window.computeUsersStats = computeUsersStats;
+/*window.computeUsersStats = computeUsersStats;
 window.sortUsers = sortUsers;
 window.processCohortData = processCohortData;
-window.filterUsers = filterUsers;
+window.filterUsers = filterUsers;*/
 window.generalstas=generalstas;

@@ -3,6 +3,7 @@ let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 
+
  const AllData = (Callback) => 
   {
     fetch ('../data/cohorts.json')
@@ -34,7 +35,7 @@ cohortdata=data[0];
       
 })
 
-   selection.addEventListener("change", (event) =>
+  /* selection.addEventListener("change", (event) =>
  {
       if (selection.value === "lim-2018-03-pre-core-pw")
        {
@@ -54,9 +55,24 @@ cohortdata=data[0];
         }
       
       
+    })*/
+    selection.addEventListener("change", (event) =>{
+      if (selection.value === "lim-2018-03-pre-core-pw") {
+        AllData( (data) =>
+        {
+          users=data[1];
+         progress=(data[2]);
+         
+         console.log(users)
+         console.log(progress)
+         let general= generalstas(users,progress);
+         
+        })
+      }
     })
   
   selectionusers.addEventListener("change", (event)=>{
+    
    
   })
 
