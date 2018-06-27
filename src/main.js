@@ -51,6 +51,7 @@ selection.addEventListener("change", (event) =>
           });
           
       })
+      let suma=0;
       AllData((data)=>{
         const users=data[1];
         const progress=data[2];
@@ -62,7 +63,11 @@ selection.addEventListener("change", (event) =>
               INTROinPROGRESS=IDofUSERinPROGRESS.intro;
                if(INTROinPROGRESS.hasOwnProperty('percent')){
                    GeneralPERCENT=INTROinPROGRESS.percent;
+                   suma=(GeneralPERCENT+suma);
+
                   console.log(data[1][i].id);
+                  console.log(suma);
+                  
                   console.log(GeneralPERCENT);}
             }
           }
