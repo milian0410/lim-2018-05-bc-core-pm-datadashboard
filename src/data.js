@@ -23,3 +23,15 @@ window.computeUsersStats = computeUsersStats;
 window.sortUsers = sortUsers;
 window.processCohortData = processCohortData;
 window.filterUsers = filterUsers;
+
+
+function validar(){
+    const userName = document.getElementById("userName").value;
+    const pass=document.getElementById("pass").value;
+  if(userName == "Alejandra" && pass== "12345"){
+   location.href = "http://127.0.0.1:5500/src/index.html";
+  }
+  else{
+    alert("Ingrese usuario y password");
+  }
+}

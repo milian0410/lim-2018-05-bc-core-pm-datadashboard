@@ -12,21 +12,36 @@
   </div>
   <!--es un div general(class=container) para la facilidad responsive-->
   <div class="boton-countries">
-      <button type="button" value="texto" id="botonPeru" class="boton-country"><img src="..\img\1402095113-941.jpg">Perú</button>
-      <button type="button" value="texto" id="botonBrasil" class="boton-country">Brasil</button>
-      <button type="button" value="texto" id="botonChile" class="boton-country">Chile</button>
-      <button type="button" value="texto" id="botonMexico" class="boton-country">Mexico</button>
+      <button type="button" value="texto" id="botonPeru" class="boton-country"><img src="..\img\peruu.jpg"></button>
+      <button type="button" value="texto" id="botonBrasil" class="boton-country"><img src="..\img\br.png"></button>
+      <button type="button" value="texto" id="botonChile" class="boton-country"><img src="..\img\cl.png"></button>
+      <button type="button" value="texto" id="botonMexico" class="boton-country"><img src="..\img\mx.png"></button>
+      
+  
   </div>
   <div class="container">
     
     <div class="firstblock">
-    
       <section>
+         <!--aqui van las opciones de sedes desde main.js-->
+         <p>Sede:</p>
+        <select id="countryAll">
+          <option value="brasil">Brasil</option>
+          <option value="chile">Chile</option>
+          <option value="mexico">México</option>
+          <option value="peru">Perú</option>
+        </select>
+        </section>
+        <br>
+        <br>
+      <section>
+          <p>Cohorts:</p>
         <select id="listcohorts">
           <!--aqui van las opciones creadas desde main.js-->
         </select>
         <br>
         <br>
+        <p>Estudiantes:</p>
         <select id="listusers" multiple>
           <!--aqui van las opciones creadas desde main.js-->
         </select>
@@ -37,7 +52,7 @@
       <table>
       </table>
     </div>
-    <script>src = "http://127.0.0.1:5500/data/cohorts.json"</script>
+    <script src = "http://127.0.0.1:5500/data/cohorts.json"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </div>
