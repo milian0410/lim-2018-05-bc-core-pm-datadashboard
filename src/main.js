@@ -1,37 +1,50 @@
-/* let name = "";
+let cohortId = "";
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 
-/* const countryAll = document.getElementById("countryAll");
-const cohortLima = '../lim-2018-03-pre-core-pw/progress.json';
-const cohortObj= JSON.parse(cohortLima);
+const countryAll = document.getElementById("countryAll");
+
+/* const cohortLima = '../lim-2018-03-pre-core-pw/progress.json';
+const cohortObj= JSON.parse(cohortLima); */
 //console.log(cohortObj); */
 
+/* const populateSedesSelect = () => {
+  cohorts.forEach(cohort => {
+    //
+    const optionSede = document.createElement('OPTION');
+    optionSede.innerHTML = cohort;
+    let attSedes = document.createAttribute('value')
+    attSedes.value = cohort;
+    optionSede.se
+    sedes.appendChild(optionSede)
+    console.log(cohort) */
 
 
 
-
-/* countryAll.addEventListener(change, ()=>{
-  if (countryAll=) */
+countryAll.addEventListener(change, ()=>{
 fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (data) {
-    for (let i = 0; i < data.length; i++) {
-      name = (data[i].id);
-      selection.innerHTML += "<option value=" + name + " >" + name + "</option>";
+  .then(function (cohorts) {
+    let output= "";
+    for (let nameCohort of cohorts) {
+      cohortId = nameCohort.id;
+      const cohortSplit = cohortId.split("-");
+      output = cohortSplit[0];
+      output += "<option value=" + cohortSplit + " >" + cohortSplit + "</option>";
+      selection.innerHTML = output;
       document.getElementsByTagName("option");
       //console.log(name);
-      const divisiones = name.split("-", 1);
+     /*  
     const expresion = /lim a*/;
-      const hallado = name.match(divisiones);
+  /*     const hallado = name.match(divisiones);
 
-      console.log(hallado);
+      console.log(hallado); */
     }
   })
-
+})
 
 selection.addEventListener("change", (event) => {
   fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
@@ -84,7 +97,9 @@ selection.addEventListener("change", (event) => {
 }
 
 
-
+const tablaColums = ['Firstname','Lastname','age','dni'];
+const personas = [{name: 'jill', Lastname:'vispera', age:50},{name: 'lulu', Lastname:'vispera', age:50},{name: 'alberto', Lastname:'vispera', age:50}]
+const marcasCarros = ['Volvo','Saab','Mercedes','Audi'];
 
 
   /* for (let i = 0; i < users.length; i++) {
