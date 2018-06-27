@@ -1,4 +1,3 @@
-
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
@@ -17,7 +16,7 @@ const selectionusers = document.getElementById("listusers");
                      {
                         Promise.all([ responseC.json(), responseU.json(), responseP.json()])
                             .then(data => {
-                                const [cohorts, users, progress] = data;
+                              
                                 Callback(data);
                             })
                     })
@@ -35,6 +34,69 @@ cohortdata=data[0];
       
 })
 
+selection.addEventListener("change", (event) =>
+{
+/*creacion de lista de usuarios sin usar la funcion especificada en el readme*/ 
+  if (selection.value === "lim-2018-03-pre-core-pw")
+    {
+      AllData( (data) =>
+      {
+          let users=data[1];
+          let progress=(data[2]);
+          for (let i = 0; i <= users.length; i++)
+          {
+           
+              let userid=users[i].id;
+              let nameuser=users[i].name;
+              selectionusers.innerHTML+= "<option value=" +users[i].id + " >" +nameuser + "</option>";
+               
+          }
+      })
+    }
+})
+
+selection.addEventListener("change", (event) =>
+{
+/*creacion de lista de usuarios sin usar la funcion especificada en el readme*/ 
+  if (selection.value === "lim-2018-03-pre-core-pw")
+    {
+    AllData( (data) =>
+    {
+        let users=data[1];
+        let progress=data[2];
+        
+        for (let i = 0; i <= users.length; i++)
+        {
+        
+
+            let useri=users[i];
+           let userid=useri.id;
+            let userinprogress=progress[userid];
+            let introinprogress=userinprogress.intro;
+            let generalprogress=introinprogress.percent;
+            if(typeof(generalprogress)!=undefined){
+            
+            console.log(useri);
+            
+            console.log(userinprogress);
+            console.log(userid);
+            console.log(introinprogress);
+            console.log(generalprogress);}
+            
+            
+            
+          
+        }    
+    })
+    }
+})
+    
+  selectionusers.addEventListener("change", (event)=>{
+    
+   
+  })
+
+
   /* selection.addEventListener("change", (event) =>
  {
       if (selection.value === "lim-2018-03-pre-core-pw")
@@ -44,7 +106,6 @@ cohortdata=data[0];
          courses=data[0].coursesIndex;
          users=data[1];
          progress=data[2];
-
          if(users.role="student")
             {
               studentname =processCohortData (data);
@@ -56,27 +117,6 @@ cohortdata=data[0];
       
       
     })*/
-    selection.addEventListener("change", (event) =>{
-      if (selection.value === "lim-2018-03-pre-core-pw") {
-        AllData( (data) =>
-        {
-          users=data[1];
-         progress=(data[2]);
-         
-         console.log(users)
-         console.log(progress)
-         let general= generalstas(users,progress);
-         
-        })
-      }
-    })
-  
-  selectionusers.addEventListener("change", (event)=>{
-    
-   
-  })
-
-
   /* for (let i = 0; i < users.length; i++) {
     name = (users[i].name);
     selectionusers.innerHTML += "<option value=" + i + ">" + one + "</option>";
@@ -94,14 +134,10 @@ cohortdata=data[0];
     .then(function(data)
      { 
       let inarray=Object.values(data)
-
-
           
           console.log(inarray);
-
           
       })
-
   }) */
 
 
@@ -135,6 +171,3 @@ cohortdata=data[0];
       document.getElementById("listusers").innerHTML+="<option value="+i+">"+one+"</option>";
     }
   })   */
-
-
-
