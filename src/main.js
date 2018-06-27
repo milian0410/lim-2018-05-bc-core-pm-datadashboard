@@ -3,6 +3,17 @@ let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 
+/* const countryAll = document.getElementById("countryAll");
+const cohortLima = '../lim-2018-03-pre-core-pw/progress.json';
+const cohortObj= JSON.parse(cohortLima);
+//console.log(cohortObj); */
+
+
+
+
+
+/* countryAll.addEventListener(change, ()=>{
+  if (countryAll=) */
 fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function (response) {
     return response.json();
@@ -12,33 +23,40 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
       name = (data[i].id);
       selection.innerHTML += "<option value=" + name + " >" + name + "</option>";
       document.getElementsByTagName("option");
-      //console.log(data);
-    }
-  }) */
+      //console.log(name);
+      const divisiones = name.split("-", 1);
+    const expresion = /lim a*/;
+      const hallado = name.match(divisiones);
 
-/* selection.addEventListener("change", (event) => {
+      console.log(hallado);
+    }
+  })
+
+
+selection.addEventListener("change", (event) => {
   fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
     .then(function (response) {
       return response.json();
     })
-    .then(function (infousers) {
-      let options = {};
-      let students = processCohortData(options);
+    .then(function (data) {
+      //let options = {};
+      //let students = processCohortData(options);
       //console.log(students);
+      for (let i = 0; i < data.length; i++) {
+        let users="";
+        users= (data[i].name);
+      //console.log(users)
       if (selection.value === "lim-2018-03-pre-core-pw") {
-        selectionusers.innerHTML = "<option value=" + infousers[0].name + " >" + infousers[0].name + "</option>";
+        selectionusers.innerHTML += "<option value=" + users + " >" + users + "</option>";
       }
       else if (selection.value !== "lim-2018-03-pre-core-pw") {
         document.getElementById("prueba").innerHTML = "Aún no hay datos";
-      }
-      
-      else {
-        //console.log(selectionusers);
-      }
-    })
-  })
+      }      
+    }
+    })  
+})
   
-  selectionusers.addEventListener("change", (event)=> {
+  /* selectionusers.addEventListener("change", (event)=>{
     fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then(function(response)
      {

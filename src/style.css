@@ -18,19 +18,19 @@ body{
 }
 
 .boton-countries{
-    height: 5%;
+    height: 1%;
     width: 100%;
     padding: 10px;
     padding-left: 10%;
 }
 .boton-country{
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 10px 15px 7px;
+    
+ 
+ 
     margin-right: 50px;
     margin-left: 50px;
-    width: 150px;
+   width: 80px;
+ 
     
 }
 
@@ -74,8 +74,8 @@ body{
 .bodies {
     padding: 0;
     margin:0;
-    background-image: url(../img/fondo.jpg);
-    background-position: center center;
+    background-image: url(../img/laboratoria_1.jpg);
+    background-position:  80% 13%;   
     background-size:cover;
     height: 100%;
        
