@@ -43,53 +43,40 @@ selection.addEventListener("change", (event) =>
       {
           let users=data[1];
           let progress=(data[2]);
-          for (let i = 0; i <= users.length; i++)
-          {
-           
-              let userid=users[i].id;
-              let nameuser=users[i].name;
-              selectionusers.innerHTML+= "<option value=" +users[i].id + " >" +nameuser + "</option>";
-               
-          }
-      })
-    }
-})
-
-selection.addEventListener("change", (event) =>
-{
-/*creacion de lista de usuarios sin usar la funcion especificada en el readme*/ 
-  if (selection.value === "lim-2018-03-pre-core-pw")
-    {
-    AllData( (data) =>
-    {
-        let users=data[1];
-        let progress=data[2];
-        
-        for (let i = 0; i <= users.length; i++)
-        {
-        
-
-            let useri=users[i];
-           let userid=useri.id;
-            let userinprogress=progress[userid];
-            let introinprogress=userinprogress.intro;
-            let generalprogress=introinprogress.percent;
-            if(typeof(generalprogress)!=undefined){
-            
-            console.log(useri);
-            
-            console.log(userinprogress);
-            console.log(userid);
-            console.log(introinprogress);
-            console.log(generalprogress);}
-            
-            
-            
+          users.forEach(function(user_element) {
+            let userid=user_element.id;
+            let nameuser=user_element.name;
+            selectionusers.innerHTML+= "<option value=" +userid + " >" +nameuser + "</option>";
+  
+          });
           
-        }    
+      })
+      AllData((data)=>{
+        const users=data[1];
+        const progress=data[2];
+        for(i=0;i<=data[1].length;i++){
+          IDinUSER=data[1][i].id;
+          if (progress.hasOwnProperty(IDinUSER)) {
+            IDofUSERinPROGRESS=data[2][IDinUSER];
+            if(IDofUSERinPROGRESS.hasOwnProperty('intro')){
+              INTROinPROGRESS=IDofUSERinPROGRESS.intro;
+               if(INTROinPROGRESS.hasOwnProperty('percent')){
+                   GeneralPERCENT=INTROinPROGRESS.percent;
+                  console.log(data[1][i].id);
+                  console.log(GeneralPERCENT);}
+            }
+          }
+         
+         
+        
+      }
+        
+
     })
     }
 })
+
+
     
   selectionusers.addEventListener("change", (event)=>{
     
