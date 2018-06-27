@@ -1,14 +1,9 @@
-let name = "";
+/* let name = "";
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 
-const cohort = 'http://127.0.0.1:5500/data/cohorts.json';
-const cohortUser = 'http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json';
-const progress = 'http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json';
-
-
-fetch(cohort)
+fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function (response) {
     return response.json();
   })
@@ -19,10 +14,10 @@ fetch(cohort)
       document.getElementsByTagName("option");
       //console.log(data);
     }
-  })
+  }) */
 
-selection.addEventListener("change", (event) => {
-  fetch(cohortUser)
+/* selection.addEventListener("change", (event) => {
+  fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/users.json')
     .then(function (response) {
       return response.json();
     })
@@ -43,8 +38,8 @@ selection.addEventListener("change", (event) => {
     })
   })
   
-  selectionusers.addEventListener("change", (event)=>{
-    fetch(progress)
+  selectionusers.addEventListener("change", (event)=> {
+    fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then(function(response)
      {
       return response.json();
@@ -54,23 +49,22 @@ selection.addEventListener("change", (event) => {
       let inarray=Object.values(progress)
       //console.log(inarray)        
       })
-  })
-
-const userName = document.getElementById(userName).value;
-const pass=document.getElementById(pass).value;
-const aceptar=document.getElementById(aceptar);
-
-aceptar.addEventListener(click, () => {
+  });
+  */
   function validar(){
-  if(userName === "Alejandra" && pass==="12345"){
-   window.location="../data/index.html"
+    var userName = document.getElementById("userName").value;
+    var pass = document.getElementById("pass").value;
+    if(userName == "Alejandra" && pass == "12345")
+    {
+   
+   location.href= "http://127.0.0.1:5500/src/index.html";
   }
-  else{
-    alert("Ingrese usuario y password")
+  else
+  {
+    alert("Ingrese usuario y password");
   }
 }
-})
-return validar
+
 
 
 

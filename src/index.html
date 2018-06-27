@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <title>Data Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <div class="logo">
-    <img src="../img/LaboratoriaLogo1.png" alt="logo laboratoria">
-  </div>
-  <!--es un div general(class=container) para la facilidad responsive-->
-  <div class="boton-countries">
-      <button type="button" value="texto" id="botonPeru" class="boton-country"><img src="..\img\1402095113-941.jpg">Perú</button>
-      <button type="button" value="texto" id="botonBrasil" class="boton-country">Brasil</button>
-      <button type="button" value="texto" id="botonChile" class="boton-country">Chile</button>
-      <button type="button" value="texto" id="botonMexico" class="boton-country">Mexico</button>
-  </div>
-  <div class="container">
-    
-    <div class="firstblock">
-    
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+   <div class="logo">
+    <img src="../img/LaboratoriaLogo1.png" alt="logo laboratoria"> 
+   </div> 
+ <!--es un div general(class=container) para la facilidad responsive-->
+    <div class="container">
+      <div class="firstblock">
       <section>
-        <select id="listcohorts">
-          <!--aqui van las opciones creadas desde main.js-->
-        </select>
-        <br>
-        <br>
-        <select id="listusers" multiple>
-          <!--aqui van las opciones creadas desde main.js-->
-        </select>
+        
       </section>
+        <section >
+            <select id="listcohorts"> 
+              <!--aqui van las opciones creadas desde main.js-->
+            </select>
+            <br>
+            <br>
+            <select id="listusers" multiple> 
+              <!--aqui van las opciones creadas desde main.js-->
+           </select> 
+        </section>   
+      </div>
+      <div class="secondblock">
+          
+        <p id="prueba">aqui</p>
+        <table>
+          
+        </table>
+      </div>
+         
+        
+        
+        <script>src="http://127.0.0.1:5500/data/cohorts.json"</script>
+        <script src="data.js"></script>
+        <script src="main.js"></script>
+        
     </div>
-    <div class="secondblock">
-      <p id="prueba">aqui</p>
-      <table>
-      </table>
-    </div>
-    <script>src = "http://127.0.0.1:5500/data/cohorts.json"</script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </div>
-</body>
+  </body>
 </html>
