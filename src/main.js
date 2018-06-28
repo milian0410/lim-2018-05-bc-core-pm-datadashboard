@@ -35,7 +35,7 @@ fetch('http://127.0.0.1:5500/data/cohorts.json')
       //const total = cohortId;
       clean += "<option value=" + cohortId + " >" + cohortId + "</option>";
       
-      //document.getElementsByTagName("option");
+    
      
     }
   }
@@ -97,10 +97,12 @@ selection.addEventListener("change", (event) => {
 }
 
 
-const tablaColums = ['Firstname','Lastname','age','dni'];
+/* const tablaColums = ['Firstname','Lastname','age','dni'];
 const personas = [{name: 'jill', Lastname:'vispera', age:50},{name: 'lulu', Lastname:'vispera', age:50},{name: 'alberto', Lastname:'vispera', age:50}]
 const marcasCarros = ['Volvo','Saab','Mercedes','Audi'];
 
+document.createElement('li');
+const tabla = document. */
 
   /* for (let i = 0; i < users.length; i++) {
     name = (users[i].name);
