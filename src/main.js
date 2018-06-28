@@ -1,9 +1,8 @@
-let cohortId = "";
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 
-const countryAll = document.getElementById("countryAll");
+const countryAll = document.getElementById("listCountry");
 
 /* const cohortLima = '../lim-2018-03-pre-core-pw/progress.json';
 const cohortObj= JSON.parse(cohortLima); */
@@ -22,27 +21,25 @@ const cohortObj= JSON.parse(cohortLima); */
 
 
 
-countryAll.addEventListener(change, ()=>{
+countryAll.addEventListener("change", (event)=> {
 fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function (response) {
     return response.json();
   })
   .then(function (cohorts) {
-    let output= "";
+    let clean = "";
     for (let nameCohort of cohorts) {
-      cohortId = nameCohort.id;
+      const cohortId = nameCohort.id;
       const cohortSplit = cohortId.split("-");
-      output = cohortSplit[0];
-      output += "<option value=" + cohortSplit + " >" + cohortSplit + "</option>";
-      selection.innerHTML = output;
-      document.getElementsByTagName("option");
-      //console.log(name);
-     /*  
-    const expresion = /lim a*/;
-  /*     const hallado = name.match(divisiones);
-
-      console.log(hallado); */
+      if(countryAll.value === cohortSplit[0]){
+      //const total = cohortId;
+      clean += "<option value=" + cohortId + " >" + cohortId + "</option>";
+      
+      //document.getElementsByTagName("option");
+     
     }
+  }
+  selection.innerHTML = clean;
   })
 })
 
