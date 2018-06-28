@@ -1,8 +1,9 @@
-const prueba = document.getElementById("prueba");
+let cohortId = "";
+let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
-const listCountry = document.getElementById("listCountry");
 
+const countryAll = document.getElementById("countryAll");
 
 /* const cohortLima = '../lim-2018-03-pre-core-pw/progress.json';
 const cohortObj= JSON.parse(cohortLima); */
@@ -21,24 +22,27 @@ const cohortObj= JSON.parse(cohortLima); */
 
 
 
-listCountry.addEventListener("change", ()=>{
+countryAll.addEventListener(change, ()=>{
 fetch('http://127.0.0.1:5500/data/cohorts.json')
   .then(function (response) {
     return response.json();
   })
   .then(function (cohorts) {
-     for (let nameCohort of cohorts) {
-      const cohortId = nameCohort.id;
+    let output= "";
+    for (let nameCohort of cohorts) {
+      cohortId = nameCohort.id;
       const cohortSplit = cohortId.split("-");
-      const union=(cohortSplit+cohortId);
-     if(listCountry.value === cohortSplit){
-      
-      const output = cohortId;     
-      console.log(output);
-     
-      //listCountry.innerHTML += "<option value=" + output + " >" + output  + "</option>";
-      }
-     }
+      output = cohortSplit[0];
+      output += "<option value=" + cohortSplit + " >" + cohortSplit + "</option>";
+      selection.innerHTML = output;
+      document.getElementsByTagName("option");
+      //console.log(name);
+     /*  
+    const expresion = /lim a*/;
+  /*     const hallado = name.match(divisiones);
+
+      console.log(hallado); */
+    }
   })
 })
 
@@ -52,20 +56,20 @@ selection.addEventListener("change", (event) => {
       //let students = processCohortData(options);
       //console.log(students);
       for (let i = 0; i < data.length; i++) {
-        let usersCohort = "";
-        usersCohort = (data[i].name);
-        //console.log(users)
-        if (selection.value === "lim-2018-03-pre-core-pw") {
-          selectionusers.innerHTML += "<option value=" + usersCohort + " >" + usersCohort + "</option>";
-        }
-        else if (selection.value !== "lim-2018-03-pre-core-pw") {
-          document.getElementById("prueba").innerHTML = "Aún no hay datos";
-        }
+        let users="";
+        users= (data[i].name);
+      //console.log(users)
+      if (selection.value === "lim-2018-03-pre-core-pw") {
+        selectionusers.innerHTML += "<option value=" + users + " >" + users + "</option>";
       }
-    })
+      else if (selection.value !== "lim-2018-03-pre-core-pw") {
+        document.getElementById("prueba").innerHTML = "Aún no hay datos";
+      }      
+    }
+    })  
 })
   
-selectionusers.addEventListener("change", (event)=>{
+  /* selectionusers.addEventListener("change", (event)=>{
     fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then(function(response)
      {
@@ -73,31 +77,33 @@ selectionusers.addEventListener("change", (event)=>{
      })        
     .then(function(progress)
      { 
-      prueba=Object.values(progress)
+      let inarray=Object.values(progress)
       //console.log(inarray)        
       })
   });
+  */
 
 
 
-
-function validar() {
-  var userName = document.getElementById("userName").value;
-  var pass = document.getElementById("pass").value;
-  if (userName == "Alejandra" && pass == "12345") {
-
-    location.href = "http://127.0.0.1:5500/src/index.html";
+  function validar(){
+    var userName = document.getElementById("userName").value;
+    var pass = document.getElementById("pass").value;
+    if(userName == "Alejandra" && pass == "12345")
+    {
+   
+   location.href= "http://127.0.0.1:5500/src/index.html";
   }
-  else {
+  else
+  {
     alert("Ingrese usuario y password");
   }
 }
 
 
-/* const tablaColums = ['Firstname','Lastname','age','dni'];
+const tablaColums = ['Firstname','Lastname','age','dni'];
 const personas = [{name: 'jill', Lastname:'vispera', age:50},{name: 'lulu', Lastname:'vispera', age:50},{name: 'alberto', Lastname:'vispera', age:50}]
 const marcasCarros = ['Volvo','Saab','Mercedes','Audi'];
- */
+
 
   /* for (let i = 0; i < users.length; i++) {
     name = (users[i].name);
