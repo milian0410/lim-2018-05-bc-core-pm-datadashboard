@@ -74,12 +74,15 @@ body{
 .bodies {
     padding: 0;
     margin:0;
-    background-image: url(../img/laboratoria_1.jpg);
     background-position:  80% 13%;   
     background-size:cover;
     height: 100%;
-       
+    background-color: #fff;
+    
 }
+
+       
+
 .entrar{
     width: 320px;
   height: 420px;
@@ -114,7 +117,7 @@ body{
 
 .boton {
     border-radius: 3px;
-    background-color: pink;
+    background-color:  #FFE521;
     font-family: Arial;
     font-size: 18px;
     font-weight: 600;
