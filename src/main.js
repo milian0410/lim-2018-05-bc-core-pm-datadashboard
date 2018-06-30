@@ -1,4 +1,5 @@
 
+
 const countryAll = document.getElementById("listCountry");
 
 let inarray = document.getElementById("prueba")
@@ -62,6 +63,15 @@ else
     })
 }
 
+  AllData((data)=>{
+    console.log(data)
+  
+    let usersWithStats = processCohortData(data);
+    console.log(usersWithStats[0].stats);
+    console.log(usersWithStats[0].stats.percent);
+
+  })
+
 countryAll.addEventListener("change", (event)=> {
     AllData( (data) =>
     {
@@ -98,7 +108,7 @@ selection.addEventListener("change", (event) =>
           };
           
       })
-      
+
 
     }
 })
@@ -247,7 +257,8 @@ selection.addEventListener("change", (event) =>
     
    
   })
-      /* let suma=0;
+  
+              /* let suma=0;
       AllData((data)=>{
         const users=data[1];
         const progress=data[2];

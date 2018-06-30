@@ -1,28 +1,37 @@
 
-
-/*const computeUsersStats = (users, progress, courses) =>
+const computeUsersStats = (users, progress, courses) =>
 {
   usersWithStats=
   [{
-    stats=
-    {
-      percent:{
-      }
-      
-    }
+    stats:
+          {
+            percent:0,
+            exercises:{
+                        total:0,
+                        completed:0,
+                        percent: 0,
+                      },
+            reads:{
+                   total:0,
+                   completed:0,
+                   percent: 0,
+                  },   
+            quizzes:{
+                      total:0,
+                      completed:0,
+                      percent: 0,
+                      scoreSum:0,
+                      scoreAvg:0,
+                    }
+                      
+          }
+   
   }]
-  
-  for (i = 0; i < username.length; i++) 
-  {
-      
-      
-  } 
-  return studentname
-}
-const sortUsers = (users, orderBy, orderDirection) => {
-}
-const filterUsers = (users, search) => {
-}
+
+
+  return usersWithStats
+  }
+
 const processCohortData = (options) => {
   courses=options[0].coursesIndex;
   users=options[1];
@@ -30,29 +39,21 @@ const processCohortData = (options) => {
  
   let compudetdata= computeUsersStats (users, progress, courses) ;
   
-}*/
-const generalstas=(users,progress)=>{
-  const generalusers=users;
-  const generalprogress=progress;
-  let total="";
-  let respuesta="";
-  console.log("entre a la funcion");
+ console.log(compudetdata);
+ return compudetdata
   
-     console.log( generalusers);
-     console.log( generalprogress);
-     
-    for (i = 0; i < generalprogress.length; i++){
-      total=progress[generalusers[i].id].intro.percent;
-      respuesta+=parseInt(total);
-    }console.log(respuesta);
-    console.log(generalprogress[generalusers[i].id].intro.percent);
   
-  return console.log(respuesta);
-  console.log(generalprogress[generalusers[i].id].intro.percent);
-  }
-  /*window.computeUsersStats = computeUsersStats;
+}
+
+const sortUsers = (users, orderBy, orderDirection) => {
+}
+const filterUsers = (users, search) => {
+}
+
+
+
+  window.computeUsersStats = computeUsersStats;
   window.sortUsers = sortUsers;
   window.processCohortData = processCohortData;
-  window.filterUsers = filterUsers;*/
-  window.generalstas=generalstas;
+  window.filterUsers = filterUsers;
   
