@@ -1,3 +1,6 @@
+
+const countryAll = document.getElementById("listCountry");
+
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
@@ -5,19 +8,38 @@ const AllPercent_User=document.getElementById("General");
 const AllPercent_User_exercise=document.getElementById("generalexercises");
 const AllPercent_User_read=document.getElementById("generalreadings");
 const AllPercent_User_quiz=document.getElementById("generalquiz");
+const Qualification_User_quiz=document.getElementById("generalscore");
 
 const Percent_User_U1=document.getElementById("unit1");
 const Percent_User_U1_read=document.getElementById("1Unitreading");
 const Percent_User_U1_quiz=document.getElementById("1Unitquiz");
+const Qualification_User_U1_quiz=document.getElementById("1Uscore");
 
 const Percent_User_U2=document.getElementById("unit2");
 const Percent_User_U2_exercises=document.getElementById("2UnitExercises");
 const Percent_User_U2_read=document.getElementById("2Unitreading");
 const Percent_User_U2_quiz=document.getElementById("2Unitquiz");
+const Qualification_User_U2_quiz=document.getElementById("2Uscore");
 
 const Percent_User_U3=document.getElementById("unit3");
 const Percent_User_U3_read=document.getElementById("3Unitreading");
 const Percent_User_U3_quiz=document.getElementById("3Unitquiz");
+const Qualification_User_U3_quiz=document.getElementById("3Uscore");
+
+
+function validar(){
+  var userName = document.getElementById("userName").value;
+  var pass = document.getElementById("pass").value;
+  if(userName == "Alejandra" && pass == "12345")
+  {
+ 
+ location.href= "http://127.0.0.1:5500/src/index.html";
+}
+else
+{
+  alert("Ingrese usuario y password");
+}
+}
 
  const AllData = (Callback) => 
   {
@@ -39,17 +61,24 @@ const Percent_User_U3_quiz=document.getElementById("3Unitquiz");
             })
     })
 }
-AllData( (data) =>
-{
-cohortdata=data[0];
-console.log(data);
 
-  for (let i = 0; i < cohortdata.length; i++) 
-  {
-      namecohorts = (cohortdata[i].id);
-      selection.innerHTML += "<option value=" + namecohorts+ " >" +namecohorts + "</option>";
-  }    
-      
+countryAll.addEventListener("change", (event)=> {
+    AllData( (data) =>
+    {
+      cohorts=data[0];
+      console.log(data);
+      let clean = "";
+        for (let nameCohort of cohorts) 
+        {
+          const cohortId = nameCohort.id;
+          const cohortSplit = cohortId.split("-");
+          if(countryAll.value === cohortSplit[0])
+          {
+          //const total = cohortId;
+          clean += "<option value=" + cohortId + " >" + cohortId + "</option>";
+          }
+        }  selection.innerHTML = clean;        
+    })
 })
 
 selection.addEventListener("change", (event) =>
@@ -61,14 +90,15 @@ selection.addEventListener("change", (event) =>
       {
           let users=data[1];
           let progress=data[2];
-          users.forEach(function(user_element) {
+          for(let user_element of users) {
             let userid=user_element.id;
             let nameuser=user_element.name;
             selectionusers.innerHTML+= "<option value=" +userid +" >" +nameuser + "</option>";
   
-          });
+          };
           
       })
+      
 
     }
 })
@@ -101,68 +131,113 @@ selection.addEventListener("change", (event) =>
         const QuizScore_U1=InUnit1.parts["04-quiz"].score ;
         const QuizScore_U2=InUnit2.parts["05-quiz"].score;
         const QuizScore_U3=InUnit3.parts["03-quiz"].score;
-console.log(QuizScore_U3);
-
+        
         const Exercises_Completd_U2=InUnit2.parts["06-exercises"].completed; 
         const Exercises_Completd_U2_2=InUnit2.parts["04-guided-exercises"].completed  ;     
-
-        
-           if(Itro_in_Progress.hasOwnProperty('percent'))
-           {
-             const General_AllUnit_PERCENT=Itro_in_Progress.percent;
-             const Percent_Unit1=InUnit1.percent;
-             const Percent_Unit2=InUnit2.percent;
-             const Percent_Unit3=InUnit3.percent;
-             
-             const Percent_Read_U1=(ReadComplet_U1/4)*100;
-             const Percent_Read_U2=(ReadComplet_U2/4)*100;
-             const Percent_Read_U3=(ReadComplet_U3/3)*100;   
-             const General_AllREad_PERCENT=(Percent_Read_U1+Percent_Read_U2+Percent_Read_U3)/3;
-              
-             const Percent_Quiz_U1=QuizComplet_U1*100;
-             const Percent_Quiz_U2=QuizComplet_U2*100;
-             const Percent_Quiz_U3=QuizComplet_U3*100; 
-             const General_AllQuiz_PERCENT=(Percent_Quiz_U1+Percent_Quiz_U2+Percent_Quiz_U3)/3;
-
-
-             const Score_Quiz_U1=QuizScore_U1;
-             const Score_Quiz_U2=QuizScore_U2;
-             const Score_Quiz_U3=QuizScore_U3;
-             const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
-console.log(Score_Quiz_U3);
-
-             const General_ExercisesonlyU2_PERCENT=((Exercises_Completd_U2+Exercises_Completd_U2_2)/2)*100;
-
-             console.log(General_ExercisesonlyU2_PERCENT);
+          
             
-             AllPercent_User.innerHTML="<th>Porcentaje general :"+General_AllUnit_PERCENT+"%"+"</th>";
-             AllPercent_User_exercise.innerHTML="<th>Porcentaje general Ejercicios: "+General_ExercisesonlyU2_PERCENT+"</td>"
-             AllPercent_User_read.innerHTML="<th>Porcentaje general Lectura: "+General_AllREad_PERCENT+"</td>";
-             AllPercent_User_quiz.innerHTML="<th>Porcentaje general Quiz: Completo el "+General_AllQuiz_PERCENT+"%"+" y saco "+General_AllQuiz_Score+"</td>";
-      
-             Percent_User_U1.innerHTML+="<th>Porcentaje general Unidad 1:</th>";
-             Percent_User_U1.innerHTML+="<td>"+Percent_Unit1+"</td>";
-             Percent_User_U1_read.innerHTML+="<th>Lecturas:</th>";
-             Percent_User_U1_read.innerHTML+="<td>"+Percent_Read_U1+"</td>";
-             Percent_User_U1_quiz.innerHTML+="<th>Quiz:</th>";
-             Percent_User_U1_quiz.innerHTML+="<td> Completo el "+Percent_Quiz_U1+"%"+" y saco "+Score_Quiz_U1+"</td>";
+            if(Itro_in_Progress.hasOwnProperty('percent'))
+            {  
+              const General_AllUnit_PERCENT=Itro_in_Progress.percent;
+              const Percent_Unit1=InUnit1.percent;
+              const Percent_Unit2=InUnit2.percent;
+              const Percent_Unit3=InUnit3.percent;
+              
+              const Percent_Read_U1=(ReadComplet_U1/4)*100;
+              const Percent_Read_U2=(ReadComplet_U2/4)*100;
+              const Percent_Read_U3=(ReadComplet_U3/3)*100;   
+              const General_AllREad_PERCENT=(Percent_Read_U1+Percent_Read_U2+Percent_Read_U3)/3;
+              
+              const Percent_Quiz_U1=QuizComplet_U1*100;
+              const Percent_Quiz_U2=QuizComplet_U2*100;
+              const Percent_Quiz_U3=QuizComplet_U3*100; 
+              const General_AllQuiz_PERCENT=(Percent_Quiz_U1+Percent_Quiz_U2+Percent_Quiz_U3)/3;
+              
+              let Score_Quiz_U1=QuizScore_U1;
+              let Score_Quiz_U2=QuizScore_U2;
+              let Score_Quiz_U3=QuizScore_U3;
+              let General_ExercisesonlyU2_PERCENT=((Exercises_Completd_U2+Exercises_Completd_U2_2)/2)*100;
 
-             Percent_User_U2.innerHTML+="<th>Porcentaje general Unidad 2:</th>";
-             Percent_User_U2.innerHTML+="<td>"+Percent_Unit2+"</td>";
-             Percent_User_U2_exercises.innerHTML+="<th>Ejercicios:</th>";
-             Percent_User_U2_exercises.innerHTML+="<td>"+General_ExercisesonlyU2_PERCENT+"</td>";
-             Percent_User_U2_read.innerHTML+="<th>Lecturas:</th>";
-             Percent_User_U2_read.innerHTML+="<td>"+Percent_Read_U2+"</td>";
-             Percent_User_U2_quiz.innerHTML+="<th>Quiz:</th>";
-             Percent_User_U2_quiz.innerHTML+="<td> Completo el "+Percent_Quiz_U2+"%"+" y saco "+Score_Quiz_U2+"</td>";
+              AllPercent_User.innerHTML="<th>Porcentaje general: "+General_AllUnit_PERCENT+"% </th>";
+              AllPercent_User_exercise.innerHTML="<th>Porcentaje general Ejercicios: "+General_ExercisesonlyU2_PERCENT+"% </td>"
+              AllPercent_User_read.innerHTML="<th>Porcentaje general Lectura: "+General_AllREad_PERCENT+"% </td>";
+              AllPercent_User_quiz.innerHTML="<th>Porcentaje general Quiz: Completo el "+General_AllQuiz_PERCENT+"% </td>";
 
-             Percent_User_U3.innerHTML+="<th>Porcentaje general Unidad 3:</th>";
-             Percent_User_U3.innerHTML+="<td>"+Percent_Unit3+"</td>";
-             Percent_User_U3_read.innerHTML+="<th>Lecturas:</th>";
-             Percent_User_U3_read.innerHTML+="<td>"+Percent_Read_U3+"</td>";
-             Percent_User_U3_quiz.innerHTML+="<th>Quiz:</th>";
-             Percent_User_U3_quiz.innerHTML+="<td> Completo el "+Percent_Quiz_U3+"%"+" y saco "+Score_Quiz_U3+"</td>";
-          }
+              Percent_User_U1.innerHTML="<td>Porcentaje general Unidad 1: "+Percent_Unit1+"% </td>";
+              Percent_User_U1_read.innerHTML="<td>Lecturas: "+Percent_Read_U1+"% </td>";
+              Percent_User_U1_quiz.innerHTML="<td>Quiz: Completo el "+Percent_Quiz_U1+"% </td>";
+            
+            
+              Percent_User_U2.innerHTML="<td>Porcentaje general Unidad 2: "+Percent_Unit2+"%</td>";
+              Percent_User_U2_exercises.innerHTML="<td>Ejercicios: "+General_ExercisesonlyU2_PERCENT+"%</td>";
+              Percent_User_U2_read.innerHTML="<td>Lecturas: "+Percent_Read_U2+"%</td>";
+              Percent_User_U2_quiz.innerHTML="<td>Quiz: Completo el "+Percent_Quiz_U2+"%</td>";
+
+              Percent_User_U3.innerHTML="<td>Porcentaje general Unidad 3: "+Percent_Unit3+"%</td>";
+              Percent_User_U3_read.innerHTML="<td>Lecturas: "+Percent_Read_U3+"%</td>";
+              Percent_User_U3_quiz.innerHTML="<td>Quiz: Completo el "+Percent_Quiz_U3+"%</td>";
+              
+               if(Percent_Quiz_U1 === 0 )
+               {
+                 Score_Quiz_U1=0; 
+                 const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                 Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                 Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                 Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                 Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+                }
+                if(Percent_Quiz_U1 !== 0 )
+                {
+                  Score_Quiz_U1=Score_Quiz_U1; 
+                  const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                  Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                  Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                  Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                  Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+                 }
+               
+           
+               if(Percent_Quiz_U2 === 0 )
+               {
+                 Score_Quiz_U2=0; 
+                 const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                 Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                 Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                 Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                 Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+                }
+               
+              if(Percent_Quiz_U2 !== 0 )
+              {
+                Score_Quiz_U2=Score_Quiz_U2; 
+                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+                }
+                
+             
+               if(Percent_Quiz_U3 === 0 )
+              {
+                Score_Quiz_U3=0; 
+                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+               }
+               if(Percent_Quiz_U3 !== 0 )
+              {
+                Score_Quiz_U3=Score_Quiz_U3; 
+                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
+                Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
+                Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
+                Qualification_User_U3_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U3+"</td>";
+                }
+                
+           }
          }
         }
           
@@ -172,7 +247,7 @@ console.log(Score_Quiz_U3);
     
    
   })
-  /*      let suma=0;
+      /* let suma=0;
       AllData((data)=>{
         const users=data[1];
         const progress=data[2];
