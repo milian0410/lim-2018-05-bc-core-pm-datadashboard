@@ -12,49 +12,49 @@
   <div class="logo">
     <img src="../img/LaboratoriaLogo1.png" alt="logo laboratoria">
   </div>
-  
-  <!--es un div general(class=container) para la facilidad responsive-->
-  <div class="boton-countries">
-    <button type="button" value="texto" id="botonPeru" class="boton-country">
-      <img src="..\img\peruu.jpg">
-    </button>
-    <button type="button" value="texto" id="botonBrasil" class="boton-country">
-      <img src="..\img\br.png">
-    </button>
-    <button type="button" value="texto" id="botonChile" class="boton-country">
-      <img src="..\img\cl.png">
-    </button>
-    <button type="button" value="texto" id="botonMexico" class="boton-country">
-      <img src="..\img\mx.png">
-    </button>
-  </div>
+<div class="main">
+  <section>
+    <!--aqui van las opciones de sedes desde main.js-->
 
+    <strong>Sede:</strong>
+    <select id="listCountry">
+      <option value="spl">Brasil</option>
+      <option value="scl">Chile</option>
+      <option value="cdmx">México</option>
+      <option value="lim">Perú</option>
+      <option value="gdl">México-Guadalajara</option>
+      <option value="aqp">Perú-Arequipa</option>
+      
+      
+    </select>
+    <strong>Cohorts:</strong>
+    <select id="listcohorts">
+    </select>
+   
+  </section>
+      
+      </div>
+  <!--es un div general(class=container) para la facilidad responsive-->
   <div class="container">
 
     <div class="firstblock">
-      <section>
-        <!--aqui van las opciones de sedes desde main.js-->
-        <p>Sede:</p>
-        <select id="listCountry">
-          <option value="spl">Brasil</option>
-          <option value="scl">Chile</option>
-          <option value="cdmx">México</option>
-          <option value="lim">Perú</option>
-        </select>
-      </section>
       <br>
-      <br>
-      <section>
-        <p>Cohorts:</p>
-        <select id="listcohorts">
-          <!--aqui van las opciones creadas desde main.js-->
-        </select>
+      
+        <button>Buscar</button>  
         <br>
         <br>
-        <p>Estudiantes:</p>
+      <input type="text" id="searchStudents" maxlength="12" name="q" placeholder="Buscar por nombre" size="15" onkeyup="searchUsers()">
+      
+        
+      <section>
+        <br>
+        <strong>Estudiantes:</strong>
+        <br>
+        <br>
         <select id="listusers" multiple>
           <!--aqui van las opciones creadas desde main.js-->
         </select>
+
       </section>
 
     </div>
@@ -68,10 +68,10 @@
 
     </div>
   </div>
-    <script src="http://127.0.0.1:5500/data/cohorts.json"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  
+  <script src="http://127.0.0.1:5500/data/cohorts.json"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+
 </body>
 
 </html>

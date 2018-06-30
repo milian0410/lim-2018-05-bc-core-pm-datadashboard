@@ -1,4 +1,4 @@
-const computeUsersStats = (users, progress, courses) => {
+/* const computeUsersStats = (users, progress, courses) => {
 let name = "";
   for (let i = 0; i < users.length; i++) {
     name = (users[i].name);
@@ -22,5 +22,5 @@ window.computeUsersStats = computeUsersStats;
 window.sortUsers = sortUsers;
 window.processCohortData = processCohortData;
 window.filterUsers = filterUsers;
-
+ */
 

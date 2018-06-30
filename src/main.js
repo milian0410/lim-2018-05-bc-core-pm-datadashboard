@@ -21,26 +21,26 @@ const cohortObj= JSON.parse(cohortLima); */
 
 
 
-countryAll.addEventListener("change", (event)=> {
-fetch('http://127.0.0.1:5500/data/cohorts.json')
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (cohorts) {
-    let clean = "";
-    for (let nameCohort of cohorts) {
-      const cohortId = nameCohort.id;
-      const cohortSplit = cohortId.split("-");
-      if(countryAll.value === cohortSplit[0]){
-      //const total = cohortId;
-      clean += "<option value=" + cohortId + " >" + cohortId + "</option>";
-      
-    
-     
-    }
-  }
-  selection.innerHTML = clean;
-  })
+countryAll.addEventListener("change", (event) => {
+  fetch('http://127.0.0.1:5500/data/cohorts.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (cohorts) {
+      let clean = "";
+      for (let nameCohort of cohorts) {
+        const cohortId = nameCohort.id;
+        const cohortSplit = cohortId.split("-");
+        if (countryAll.value === cohortSplit[0]) {
+          //const total = cohortId;
+          clean += "<option value=" + cohortId + " >" + cohortId + "</option>";
+
+
+
+        }
+      }
+      selection.innerHTML = clean;
+    })
 })
 
 selection.addEventListener("change", (event) => {
@@ -53,19 +53,19 @@ selection.addEventListener("change", (event) => {
       //let students = processCohortData(options);
       //console.log(students);
       for (let i = 0; i < data.length; i++) {
-        let users="";
-        users= (data[i].name);
-      //console.log(users)
-      if (selection.value === "lim-2018-03-pre-core-pw") {
-        selectionusers.innerHTML += "<option value=" + users + " >" + users + "</option>";
+        let users = "";
+        users = (data[i].name);
+        if (selection.value === "lim-2018-03-pre-core-pw") {
+          selectionusers.innerHTML += "<option value=" + users + " >" + users + "</option>";
+        }
+        else if (selection.value !== "lim-2018-03-pre-core-pw") {
+          document.getElementById("prueba").innerHTML = "Aún no hay datos";
+        }
       }
-      else if (selection.value !== "lim-2018-03-pre-core-pw") {
-        document.getElementById("prueba").innerHTML = "Aún no hay datos";
-      }      
-    }
-    })  
-})
-  
+    })
+  })
+
+
   /* selectionusers.addEventListener("change", (event)=>{
     fetch('http://127.0.0.1:5500/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
     .then(function(response)
@@ -95,6 +95,7 @@ selection.addEventListener("change", (event) => {
     alert("Ingrese usuario y password");
   }
 }
+
 
 
 /* const tablaColums = ['Firstname','Lastname','age','dni'];
