@@ -81,13 +81,15 @@ Por eso los objetivos de los usuarios(TMs) con relación a este producto es:
 ![Diagrama de Flujo](https://github.com/milian0410/lim-2018-05-bc-core-pm-datadashboard/blob/develop/Imagenes%20readme/diagrama%20de%20lms.jpeg)
 
 ## PROTOTIPADO (Proceso de diseño)
-
+BAJA FIDELIDAD
 ![prototipo baja fidelidad](https://github.com/angelicanoriega/lim-2018-05-bc-core-pm-datadashboard/blob/develop/Imagenes%20readme/baja%20fidelidad%202.jpeg) 
-
+ALTA FIDELIDAD
 ![prototipo alta fidelidad](https://github.com/angelicanoriega/lim-2018-05-bc-core-pm-datadashboard/blob/develop/Imagenes%20readme/figma%20en%20gif.gif)
 
 En el prototipo de alta fidelidad se muestra el promedio general del cohort selecionado, 
 tambien se ve que al seleccionar a una aqlumna muestra sus porcentajes deneralews y expecificos de sus unidades
+
+![Presentación Final](https://github.com/milian0410/lim-2018-05-bc-core-pm-datadashboard/blob/gh-pages/img/gif/picasion.com_23ed9d1cce960cd6a134ed6040620584.gif)
 
 ## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
