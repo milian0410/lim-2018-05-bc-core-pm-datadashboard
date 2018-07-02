@@ -70,30 +70,18 @@ A pesar de que la data de progreso del LMS (ej. lecturas leídas, ejercicios com
 
 Por eso los objetivos de los usuarios(TMs) con relación a este producto es:
 
-| Interfaz | Sí o No |
-|--------------------------|----------------|
-| Cifrar los mensajes en MAYÚSCULAS | ✅
-| Cifrar los mensajes en MINÚSCULAS | ✅
-| Descifrar los mensajes en MAYÚSCULAS | ✅
-| Descifrar los mensajes en MINÚSCULAS | ✅
-| Reconocer espacios para el cifrado y descifrado | ✅
-| Resetear Cifrado | ✅
-| Resetear Descifrado | ✅
-| Interactuar con un menú | ✅
-| Reconocer símbolos |❌
-
 | **OBJETIVOS** |
 |---------------|
-| - Permitir visualizar la data del progreso del LMS. | 
-| - Facilitar la toma de decisiones. |
-| - Evaluar el proceso de aprendizaje de las estudiantes. |
-| - Reportar el progreso de las lecturas leidas, ejercicios completados, notas en quizzes de forma eficiente, tanto  de los resultados de cada estudiante y resultados generales a nivel de cohort. |
+| * Permitir visualizar la data del progreso del LMS. | 
+| * Facilitar la toma de decisiones. |
+| * Evaluar el proceso de aprendizaje de las estudiantes. |
+| * Reportar el progreso de las lecturas leidas, ejercicios completados, notas en quizzes de forma eficiente, tanto  de los resultados de cada estudiante y resultados generales a nivel de cohort. |
 
 ## DIAGRAMA DE FLUJO
 
 ![Diagrama de Flujo](https://github.com/milian0410/lim-2018-05-bc-core-pm-datadashboard/blob/develop/Imagenes%20readme/diagrama%20de%20lms.jpeg)
 
-## PROTOTIPADO
+## PROTOTIPADO (Proceso de diseño)
 
 ![prototipo baja fidelidad](https://github.com/angelicanoriega/lim-2018-05-bc-core-pm-datadashboard/blob/develop/Imagenes%20readme/baja%20fidelidad%202.jpeg) 
 
@@ -104,13 +92,7 @@ tambien se ve que al seleccionar a una aqlumna muestra sus porcentajes deneralew
 
 ## Consideraciones generales
 
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. 
 
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_
-y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el
-setup y configuración necesaria para ejecutar los tests (pruebas) usando el
-comando `npm test`.
 
 
 
@@ -118,33 +100,35 @@ comando `npm test`.
   por qué. Cómo los descubriste.
 * Cuándo revisan normalmente estos datos los usuarios.
 * Cómo crees que el producto les está resolviendo sus problemas.
-* Cómo fue tu proceso de diseño.
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
-Como mínimo, tu implementación debe:
+### IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
-1. Permitir al usuario seleccionar un cohort de una lista de cohorts.
-2. Al seleccionar un cohort:
-   - Listar las estudiantes de ese cohort
-   - Para cada estudiante:
+| Interfaz | Sí o No |
+|--------------------------|----------------|
+| 1. Permitir al usuario seleccionar un cohort de una lista de cohorts. | ✅
+| 2. Al seleccionar un cohort:
+   - Listar las estudiantes de ese cohort | ✅
+| - Para cada estudiante:
      + Calcular porcentaje de completitud de todos los _cursos_.
      + Calcular grado de completitud de _lecturas_, _ejercicios autocorregidos_,
-       y _quizzes_.
-   - Ordenar estudiantes por completitud _general_ (porcentaje consumido/completado
+       y _quizzes_.| ✅
+| - Filtrar/buscar estudiantes por nombre. | ✅
+| 3. Visualizarse sin problemas desde distintos tamaños de pantallas: móviles,
+   tablets y desktops.| ✅
+| 4. Incluir pruebas unitarias. | ✅
+| Resetear Descifrado | ✅
+| Interactuar con un menú | ✅
+|   - Ordenar estudiantes por completitud _general_ (porcentaje consumido/completado
      de todos los cursos del cohort en cuestión), de _lecturas_, _ejercicios
-     autocorregidos_ y _quizzes_.
-   - Filtrar/buscar estudiantes por nombre.
-3. Visualizarse sin problemas desde distintos tamaños de pantallas: móviles,
-   tablets y desktops.
-4. Incluir pruebas unitarias.
+     autocorregidos_ y _quizzes_.  |❌
 
-Es importante que tu interfaz, a pesar de ser una versión mínima de tu ideal,
-igual debe seguir los fundamentos de visual design, como: contraste,
-alineación, jerarquía, entre otros.
 
 ### IMPLEMENTACIÓN DEL PROYECTO
+La lógica del proyecto debe estar implementada completamente en JavaScript (ES6), HTML y CSS. 
 
+Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_ y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el setup y configuración necesaria para ejecutar los tests (pruebas) usando el
+comando `npm test`.
 
 | **JavaScript** |
 |----------------|
