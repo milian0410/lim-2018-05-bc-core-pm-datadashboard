@@ -1,6 +1,25 @@
 
 
 const countryAll = document.getElementById("listCountry");
+const Orderlist = document.getElementById("listorder");
+const Asd_des=document.getElementById("listASD/DESC");
+
+const Select_ordenvalue = (Callback) => {
+Orderlist.addEventListener("change", (event)=>{
+  const ordenvalue=Orderlist.value;
+  console.log(ordenvalue);
+  Callback(ordenvalue)
+})
+}
+const Select_ASC_or_DESC = (Callback) => {
+  Asd_des.addEventListener("change", (event)=>{
+    const orderAsd_des=Asd_des.value;
+    console.log(orderAsd_des);
+    Callback(orderAsd_des)
+  })
+  }
+const bottonfilter = document.getElementById("botton");
+const textfilter = document.getElementById("text");
 
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
@@ -63,6 +82,7 @@ else
     })
 }
 
+
   AllData((data)=>{
     console.log('main.js', 'data 67')
     console.log(data)
@@ -74,6 +94,7 @@ else
 
 
   })
+   
 
 countryAll.addEventListener("change", (event)=> {
     AllData( (data) =>
@@ -115,7 +136,22 @@ selection.addEventListener("change", (event) =>
 
     }
 })
+bottonfilter.addEventListener("click",()=>{
+  const search=textfilter.value;
+  const search_user=search.toLowerCase();
+
+  AllData((data)=>{
     
+    let usersWithStats = processCohortData(data);
+    console.log(usersWithStats);
+    
+    let filter =filterUsers(usersWithStats,search);
+    console.log(filter);
+    
+  alert("ol")
+  
+  })
+})
   selectionusers.addEventListener("change", (event)=>{
     const useriddata=selectionusers.value;
     AllData((data)=>{
