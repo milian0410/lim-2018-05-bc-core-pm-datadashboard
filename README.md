@@ -97,7 +97,7 @@ tambien se ve que al seleccionar a una aqlumna muestra sus porcentajes deneralew
 | 2. Al seleccionar un cohort:  |
 |- Listar las estudiantes de ese cohort | ✅
 | - Para cada estudiante: 
-|+ Calcular porcentaje de completitud de todos los _cursos_.
+|+ Calcular porcentaje de completitud de todos los _cursos_.| ✅
 |+ Calcular grado de completitud de _lecturas_, _ejercicios autocorregidos_, y _quizzes_.| ✅
 | - Filtrar/buscar estudiantes por nombre. | ✅
 | 3. Visualizarse sin problemas desde distintos tamaños de pantallas: móviles, tablets y desktops.| ✅
@@ -136,3 +136,4 @@ comando `npm test`.
 
 
 |**Creado by Martha Anticona Zola y Mariangélica Noriega**|
+|---------------------------------------------------------|
