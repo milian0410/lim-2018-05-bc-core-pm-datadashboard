@@ -22,10 +22,8 @@ describe('data', () => {
     const courses = Object.keys(cohort.coursesIndex);
     const { users, progress } = fixtures;
     
-
     it('debería retornar arreglo de usuarios con propiedad stats', () => {
       const processed = computeUsersStats(users, progress, courses);
-
       assert.equal(users.length, processed.length);
 
       processed.forEach(user => {
@@ -46,20 +44,21 @@ describe('data', () => {
         () => assert.equal(processed[0].stats.percent, 53)
       );
 
-      it('debería tener propiedad exercises con valor {total: 2, completed: 0, percent: 0}', () => {
+      it('debería tener propiedad exercises con valor {total: 2, completed: 1, percent: 50}', () => {
         assert.deepEqual(processed[0].stats.exercises, {
           total: 2,
-          completed: 0,
-          percent: 0,
+          completed: 1,
+          percent: 50,
         });
       });
 
-      it('debería tener propiedad quizzes con valor {total: 3, completed: 2, percent: 67, scoreSum: 57, scoreAvg: 29}', () => {
+      it('debería tener propiedad quizzes con valor {total: 3, completed: 2, percent: 67, scoreSum: 57, scoreAvg: 19}', () => {
         assert.deepEqual(processed[0].stats.quizzes, {
           total: 3,
           completed: 2,
           percent: 67,
-          scoreAvg: 29,
+          scoreSum: 57,
+          scoreAvg: 19,
         });
       });
 
@@ -78,7 +77,11 @@ describe('data', () => {
   describe('sortUsers(users, orderBy, orderDirection)', () => {
 
     it('debería retornar arreglo de usuarios ordenado por nombre ASC');
+    
+    
+
     it('debería retornar arreglo de usuarios ordenado por nombre DESC');
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');

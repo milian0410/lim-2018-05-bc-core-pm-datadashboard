@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -135,3 +136,145 @@
 </body>
 
 </html>
+=======
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+   <div class="logo">
+    <img src="../img/LaboratoriaLogo1.png" alt="logo laboratoria"> 
+   </div> 
+ <!--es un div general(class=container) para la facilidad responsive-->
+    <div class="container">
+      <div class="firstblock">
+        <section>
+          <!--aqui van las opciones de sedes desde main.js-->
+          <p>Sede:</p>
+          <select id="listCountry">
+            <option value="spl">Brasil</option>
+            <option value="scl">Chile</option>
+            <option value="cdmx">México</option>
+            <option value="lim">Perú</option>
+          </select>
+        </section>
+        <br>
+        <br>
+        
+        <section >
+            <select id="listcohorts" > 
+              <!--aqui van las opciones creadas desde main.js-->
+            </select>
+            <br>
+            <br>
+            <select id="listusers" multiple> 
+              <!--aqui van las opciones creadas desde main.js-->
+           </select> 
+        </section>   
+      </div>
+      <section>
+        <div class="secondblock"> 
+            <section>
+                <!--aqui van las opciones ordeBY-->
+                <p>Ordenar por:</p>
+                <select id="listorder">
+                  <option value="Porcentaje">Porcentaje General</option>
+                  <option value="Nombre">Nombre</option>
+                  <option value="Ejercicios">Porcentaje Ejercicios</option>
+                  <option value="Lectura">Porcentaje Lectura</option>
+                  <option value="Quizes">Notas Quizes</option>
+                  <option value="PQuizes">Porcentaje Quizes</option>
+                </select>
+              </section>
+              <section>
+                  <!--aqui van las opciones ASC Y DESC-->
+                  <p>Ordenar por:</p>
+                  <select id="listASD/DESC">
+                    <option value="ASC">ASC</option>
+                    <option value="DESC">DESC</option>
+                  </select>
+                  <input type="button" id="botton-orden" value="buscar">
+
+                </section>
+                <table class="listado" id="ordenado"></table> 
+          <p id="prueba">aqui</p>
+          <div class="table" id="generaltable">
+            <table>
+              <tr id="General">
+              </tr>
+              <br>
+              <tr id="generalexercises">
+              </tr>
+              <br>
+              <tr id="generalreadings">
+              </tr>
+              <br>
+              <tr id="generalquiz">
+              </tr>
+              <br>
+              <tr id="generalscore">
+              </tr>
+            </table>
+          </div>
+          <div class="table" id="unitonetable">
+            <table>
+              <tr id="unit1">
+              </tr>
+              <br>
+              <tr id="1Unitreading">
+              </tr>
+              <br>
+              <tr id="1Unitquiz">
+              </tr>
+              <br>
+              <tr id="1Uscore">
+              </tr>
+            </table>
+          </div>
+          <div class="table" id="unittwotable">
+              <table>
+                <tr id="unit2">
+                </tr >
+                <br>
+                <tr id="2UnitExercises">
+                </tr>
+                <br>
+                <tr id="2Unitreading">
+                </tr>
+                <br>
+                <tr id="2Unitquiz" >
+                </tr>
+                <br>
+                <tr id="2Uscore">
+                </tr>
+              </table>
+          </div>
+          <div class="table" id="unitthreetable">
+              <table>
+                <tr id="unit3">
+                </tr>
+                <br>
+                <tr id="3Unitreading">
+                </tr>
+                <br>
+                <tr id="3Unitquiz">
+                </tr>
+                <br>
+                <tr id="3Uscore">
+                </tr>
+              </table>
+          </div>    
+        </div>
+      </section>   
+        
+        
+        <script src="data.js"></script>
+        <script src="main.js"></script>
+        
+    </div>
+  </body>
+</html>
+
