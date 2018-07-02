@@ -252,19 +252,6 @@ const processCohortData = (options) => {
  let compudetdata= computeUsersStats (users, progress, courses) ;
   console.log('data.js', 'compudetdata 231')
   console.log(compudetdata);
-
-   Select_ASC_or_DESC((orderAsd_des)=>{ 
-   Select_ordenvalue((ordenvalue)=>{
-     let orden= sortUsers(compudetdata, ordenvalue, orderAsd_des)
-   console.log(orden);
- })
- })
-  
-   
-    
-     
-
-   
   return compudetdata
 }
 
@@ -431,6 +418,8 @@ if(orderBy === "PQuizes")
   }
 }  
  return users
+ console.log(users);
+ 
 }
 
 const filterUsers = (users, search) => {

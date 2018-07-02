@@ -3,6 +3,8 @@
 const countryAll = document.getElementById("listCountry");
 const Orderlist = document.getElementById("listorder");
 const Asd_des=document.getElementById("listASD/DESC");
+const nombreUsuariosordenado = document.getElementById("ordenado");
+
 
 const Select_ordenvalue = (Callback) => {
 Orderlist.addEventListener("change", (event)=>{
@@ -18,8 +20,11 @@ const Select_ASC_or_DESC = (Callback) => {
     Callback(orderAsd_des)
   })
   }
+
 const bottonfilter = document.getElementById("botton");
 const textfilter = document.getElementById("text");
+const botton_orden=document.getElementById("botton-orden");
+
 
 let inarray = document.getElementById("prueba")
 const selection = document.getElementById("listcohorts");
@@ -94,7 +99,52 @@ else
 
 
   })
-   
+
+
+  botton_orden.addEventListener("click",()=>
+  {
+    AllData((data)=>{
+      
+     Select_ASC_or_DESC((orderAsd_des)=>
+     { 
+     Select_ordenvalue((ordenvalue)=>
+     {
+      let usersWithStats = processCohortData(data); 
+      let orden= sortUsers(usersWithStats, ordenvalue, orderAsd_des);
+      console.log(orden);
+      console.log(orden[0].stats);
+
+      
+        
+          let tabla = '';
+          tabla += '<tr>';
+          tabla += '<th> Nombres </th>';
+          tabla += '<th> General % </th>';
+          tabla += '<th> Ejercicios % </th>';
+          tabla += '<th> Quiz % </th>';
+          tabla += '<th> Nota Quiz  </th>';
+          tabla += '<th> Lecturas % </th>';
+          tabla += '</tr>'
+          for (i = 0; i < orden.length; i++) {
+          tabla += '<tr>';
+          tabla += '<td id= "nombrestabla">' + orden[i].name + '</td>';
+          tabla += '<td>' + orden[i].stats.percent + '</td>';
+          tabla += '<td>' + orden[i].stats.exercises.percent+ '</td>';
+          tabla += '<td>' + orden[i].stats.quizzes.percent + '</td>';
+          tabla += '<td>' + orden[i].stats.quizzes.scoreAvg + '</td>';
+          tabla += '<td>' + orden[i].stats.reads.percent+ '</td>';
+          tabla += '</tr>';
+       
+          nombreUsuariosordenado.innerHTML = tabla
+        }
+   })
+  })
+  })  
+})
+
+
+
+
 
 countryAll.addEventListener("change", (event)=> {
     AllData( (data) =>
