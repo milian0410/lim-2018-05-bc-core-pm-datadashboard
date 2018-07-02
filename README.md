@@ -70,7 +70,20 @@ A pesar de que la data de progreso del LMS (ej. lecturas leídas, ejercicios com
 
 Por eso los objetivos de los usuarios(TMs) con relación a este producto es:
 
+| Interfaz | Sí o No |
+|--------------------------|----------------|
+| Cifrar los mensajes en MAYÚSCULAS | ✅
+| Cifrar los mensajes en MINÚSCULAS | ✅
+| Descifrar los mensajes en MAYÚSCULAS | ✅
+| Descifrar los mensajes en MINÚSCULAS | ✅
+| Reconocer espacios para el cifrado y descifrado | ✅
+| Resetear Cifrado | ✅
+| Resetear Descifrado | ✅
+| Interactuar con un menú | ✅
+| Reconocer símbolos |❌
+
 | **OBJETIVOS** |
+|---------------|
 | - Permitir visualizar la data del progreso del LMS. | 
 | - Facilitar la toma de decisiones. |
 | - Evaluar el proceso de aprendizaje de las estudiantes. |
@@ -133,7 +146,8 @@ alineación, jerarquía, entre otros.
 ### IMPLEMENTACIÓN DEL PROYECTO
 
 
-| **JavaScript** |  
+| **JavaScript** |
+|----------------|
 | Estilo |   
 | Nomenclatura/semántica |   
 | Funciones/modularidad |  
@@ -143,13 +157,13 @@ alineación, jerarquía, entre otros.
 | **CSS** |  
 | DRY |  
 | Responsive |  
-| **SCM** | 
+| **SCM** |  
 | Git |  
-| GitHub |  
+| GitHub |   
 | **CS** |  
-| Lógica | 
-| Arquitectura | 
-| Patrones/paradigmas | 
+| Lógica |  
+| Arquitectura |  
+| Patrones/paradigmas |  
 
 
 
