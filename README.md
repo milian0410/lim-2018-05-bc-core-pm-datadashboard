@@ -9,8 +9,6 @@ Sin embargo, los datos por sí solos son de poca utilidad. Para transformar dato
 Si pensamos en un _dashboard_ podemos pensar en el tablero de control de un auto o el de un avión. Un espacio desde el cual un usuario puede tener acceso a la información y controles más relevantes, en este caso, del vehículo que está utilizando. El _dashboard_ de un auto le permite a quien conduce saber a qué velocidad está yendo, qué cambio/velocidad está utilizando, cuánto combustible
 tiene disponible, cuál es la temperatura del motor, cuántas revoluciones por minuto dan las ruedas, cuánta distancia ha recorrido, etc.
 
-![datadash](http://www.netsuite.com/portal/assets/img/products/experience/scrn-nsexperience-dashboard.png)
-
 ## Aplicaciones en el mundo real
 
 En el mundo de la web es muy común el uso de _dashboards_. De hecho, [wikipedia](https://goo.gl/P7PF4y)
