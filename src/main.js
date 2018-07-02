@@ -1,6 +1,6 @@
 const countryAll = document.getElementById("listCountry");
 let nameUser = document.getElementById("searchUsers");
-
+let inarray = document.getElementById("prueba");
 const selection = document.getElementById("listcohorts");
 const selectionusers = document.getElementById("listusers");
 const AllPercent_User = document.getElementById("General");
@@ -77,7 +77,7 @@ countryAll.addEventListener("change", (event) => {
 })
 
 nameUser.addEventListener("keyup", (event) => {
-  /*buscar usuarios*/
+  
   AllData((data) => {
     let users = data[1];
     nameSelect = nameUser.value.toUpperCase();
