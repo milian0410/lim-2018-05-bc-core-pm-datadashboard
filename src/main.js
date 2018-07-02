@@ -64,11 +64,14 @@ else
 }
 
   AllData((data)=>{
+    console.log('main.js', 'data 67')
     console.log(data)
-  
+    
+
     let usersWithStats = processCohortData(data);
-    console.log(usersWithStats[0].stats);
-    console.log(usersWithStats[0].stats.percent);
+    console.log('main.js', 'usersWithStats 72')
+    console.log(usersWithStats);
+
 
   })
 
@@ -76,7 +79,7 @@ countryAll.addEventListener("change", (event)=> {
     AllData( (data) =>
     {
       cohorts=data[0];
-      console.log(data);
+    
       let clean = "";
         for (let nameCohort of cohorts) 
         {
@@ -115,11 +118,18 @@ selection.addEventListener("change", (event) =>
     
   selectionusers.addEventListener("change", (event)=>{
     const useriddata=selectionusers.value;
-    console.log(useriddata);
     AllData((data)=>{
+      const user=data[1];
+   
       const progress=data[2];
-      console.log(progress);
-      
+      user.forEach(element => {
+         if ( element.hasOwnProperty('id') ) {        
+        const IDuser=element.id          
+        if(IDuser === useriddata){
+         const nameuser = element.name;
+         inarray.innerHTML=nameuser;
+        }
+      }});
       if (progress.hasOwnProperty(useriddata)) {
       const User_IDin_Progress=progress[useriddata];
 
@@ -166,6 +176,8 @@ selection.addEventListener("change", (event) =>
               let Score_Quiz_U1=QuizScore_U1;
               let Score_Quiz_U2=QuizScore_U2;
               let Score_Quiz_U3=QuizScore_U3;
+              let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+
               let General_ExercisesonlyU2_PERCENT=((Exercises_Completd_U2+Exercises_Completd_U2_2)/2)*100;
 
               AllPercent_User.innerHTML="<th>Porcentaje general: "+General_AllUnit_PERCENT+"% </th>";
@@ -190,7 +202,7 @@ selection.addEventListener("change", (event) =>
                if(Percent_Quiz_U1 === 0 )
                {
                  Score_Quiz_U1=0; 
-                 const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                 let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                  Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                  Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                  Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
@@ -199,7 +211,7 @@ selection.addEventListener("change", (event) =>
                 if(Percent_Quiz_U1 !== 0 )
                 {
                   Score_Quiz_U1=Score_Quiz_U1; 
-                  const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                  let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                   Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                   Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                   Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
@@ -210,7 +222,7 @@ selection.addEventListener("change", (event) =>
                if(Percent_Quiz_U2 === 0 )
                {
                  Score_Quiz_U2=0; 
-                 const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                 let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                  Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                  Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                  Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
@@ -220,7 +232,7 @@ selection.addEventListener("change", (event) =>
               if(Percent_Quiz_U2 !== 0 )
               {
                 Score_Quiz_U2=Score_Quiz_U2; 
-                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                 Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                 Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                 Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
@@ -231,7 +243,7 @@ selection.addEventListener("change", (event) =>
                if(Percent_Quiz_U3 === 0 )
               {
                 Score_Quiz_U3=0; 
-                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                 Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                 Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                 Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
@@ -240,7 +252,7 @@ selection.addEventListener("change", (event) =>
                if(Percent_Quiz_U3 !== 0 )
               {
                 Score_Quiz_U3=Score_Quiz_U3; 
-                const General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
+                let General_AllQuiz_Score=(Score_Quiz_U1+Score_Quiz_U2+Score_Quiz_U3)/3;
                 Qualification_User_quiz.innerHTML="<th>Nota general: Su nota fue "+General_AllQuiz_Score+"</th>";
                 Qualification_User_U1_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U1+"</td>";
                 Qualification_User_U2_quiz.innerHTML="<td>Nota: Su nota fue "+Score_Quiz_U2+"</td>";
