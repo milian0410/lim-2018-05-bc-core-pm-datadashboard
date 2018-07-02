@@ -89,7 +89,7 @@ ALTA FIDELIDAD
 En el prototipo de alta fidelidad se muestra el promedio general del cohort selecionado, 
 tambien se ve que al seleccionar a una aqlumna muestra sus porcentajes deneralews y expecificos de sus unidades
 
-![Presentación Final](https://github.com/milian0410/lim-2018-05-bc-core-pm-datadashboard/blob/gh-pages/img/gif/picasion.com_23ed9d1cce960cd6a134ed6040620584.gif)
+![IMAGEN] (https://github.com/milian0410/lim-2018-05-bc-core-pm-datadashboard/blob/gh-pages/img/gif/1.jpg)
 
 ## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
