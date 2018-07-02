@@ -133,20 +133,20 @@ alineación, jerarquía, entre otros.
 ### IMPLEMENTACIÓN DEL PROYECTO
 
 
-| **JavaScript** |
-| Estilo | 
-| Nomenclatura/semántica | 
-| Funciones/modularidad | 
-| Estructuras de datos | 
-| Tests | 
-| **HTML** |
-| **CSS** | 
-| DRY | 
-| Responsive | 
-| **SCM** |
-| Git | 
-| GitHub | 
-| **CS** | 
+| **JavaScript** |  
+| Estilo |   
+| Nomenclatura/semántica |   
+| Funciones/modularidad |  
+| Estructuras de datos |  
+| Tests |  
+| **HTML** | 
+| **CSS** |  
+| DRY |  
+| Responsive |  
+| **SCM** | 
+| Git |  
+| GitHub |  
+| **CS** |  
 | Lógica | 
 | Arquitectura | 
 | Patrones/paradigmas | 
