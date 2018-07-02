@@ -135,5 +135,5 @@ comando `npm test`.
 
 
 
-|**Creado by Martha Anticona Zola y Mariangélica Noriega**|
+|**Creado by Martha Milagros Anticona Zola y Maria Angélica Noriega**|
 |---------------------------------------------------------|
