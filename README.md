@@ -28,14 +28,14 @@ una empresa o de un servicio. Así, tenemos dashboards como los de:
 * [Quickbooks](https://quickbooks.intuit.com/content/dam/intuit/quickbooks/branding/make-organization-easy-visual.png)
   para visualizar la información financiera de una empresa.
 
-# DEFINICIÓN DEL PRODUCTO:
+## DEFINICIÓN DEL PRODUCTO:
 Los Trainers Manager actualmente realizan la información en google docs, lo cual es poco eficiente por la cantidad de postulantes que aplicaron.
 La página web que estamos creando se entrega los datos de forma más eficiente a través de un formato que puedan visualizar y manipular la estadística en los cursos y las estudiantes.
 
-#### PRINCIPALES USUARIAS:
-Principales usuarias: Trainers Manager de Laboratoria
-Srta. Alejandra
-Srta. Beatriz
+## PRINCIPALES USUARIAS:
+Principales usuarias: Trainers Manager de Laboratoria.  
+Srta. Alejandra  
+Srta. Beatriz  
 
 ## ENTREVISTAS A LAS TRAINERS MANAGER.
 Para llevar a cabo el prototipado del proyecto se entrevistó a las Trainers Manager (TI):  
@@ -47,10 +47,11 @@ Para llevar a cabo el prototipado del proyecto se entrevistó a las Trainers Man
 ### Respuesta:  
 Me sirve ver primero los promedios por clase, para ver como les ha ido a todas, cuánto de porcentaje de lecturas hicieron, cuánto sacaron el quizes, y los ejercicios. También tener correlaciones (mejor resultado en quizzes se relaciona con mejor resultado en ejercicios), y ver de manera particular los resultados de cada estudiante y Finalmente ver los resultados por cursos, para ver si les resulto muy complejo y poder tomar acción con respecto a los resultados.  
 
-[BEA](https://github.com/angelicanoriega/lim-2018-05-bc-core-pm-datadashboard/blob/develop/audios%20de%20entrevista/WhatsApp%20Audio%202018-06-11%20at%203.03.57%20PM.mp4) 
+[BEATRIZ](https://github.com/angelicanoriega/lim-2018-05-bc-core-pm-datadashboard/blob/develop/audios%20de%20entrevista/WhatsApp%20Audio%202018-06-11%20at%203.03.57%20PM.mp4) 
 
 ### PREGUNTA 
 ¿Como llevan actualmente los reportes del LMS?  
+
 ### Respuesta:  
 Actualmente los reportes del LMS lo llevan en la página de google docs.  
 
@@ -60,7 +61,7 @@ Actualmente los reportes del LMS lo llevan en la página de google docs.
 ### Respuesta:  
 Por ese medio no pueden hacer comparaciones con respecto a los datos obtenidos, no tienen una perspectiva general de como le va a las estudiantes en los cursos, quizzes o ejercicios.  
 
-### OBJETIVOS DE LOS USUARIOS CON RELACIÓN AL PRODUCTO.
+## OBJETIVOS DE LOS USUARIOS CON RELACIÓN AL PRODUCTO.
 
 En Laboratoria, las Training Managers (TMs) hacen un gran trabajo al analizar la mayor cantidad de datos posibles respecto al progreso de las estudiantes para apoyarlas en su aprendizaje, para eso utilizan 
 
@@ -72,7 +73,7 @@ Por eso los objetivos de los usuarios(TMs) con relación a este producto es:
 
 | **OBJETIVOS** |
 |---------------|
-| * Permitir visualizar la data del progreso del LMS. | 
+| * Permitir visualizar la data del progreso del LMS en un solo lugar. | 
 | * Facilitar la toma de decisiones. |
 | * Evaluar el proceso de aprendizaje de las estudiantes. |
 | * Reportar el progreso de las lecturas leidas, ejercicios completados, notas en quizzes de forma eficiente, tanto  de los resultados de cada estudiante y resultados generales a nivel de cohort. |
@@ -90,41 +91,25 @@ Por eso los objetivos de los usuarios(TMs) con relación a este producto es:
 En el prototipo de alta fidelidad se muestra el promedio general del cohort selecionado, 
 tambien se ve que al seleccionar a una aqlumna muestra sus porcentajes deneralews y expecificos de sus unidades
 
-## Consideraciones generales
-
-
-
-
-
-* Cuáles son los datos más relevantes que quieren ver en la interfaz y
-  por qué. Cómo los descubriste.
-* Cuándo revisan normalmente estos datos los usuarios.
-* Cómo crees que el producto les está resolviendo sus problemas.
-
-
-### IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
+## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
 | Interfaz | Sí o No |
 |--------------------------|----------------|
 | 1. Permitir al usuario seleccionar un cohort de una lista de cohorts. | ✅
-| 2. Al seleccionar un cohort:
-   - Listar las estudiantes de ese cohort | ✅
-| - Para cada estudiante:
-     + Calcular porcentaje de completitud de todos los _cursos_.
-     + Calcular grado de completitud de _lecturas_, _ejercicios autocorregidos_,
-       y _quizzes_.| ✅
+| 2. Al seleccionar un cohort:  |
+|- Listar las estudiantes de ese cohort | ✅
+| - Para cada estudiante: 
+|+ Calcular porcentaje de completitud de todos los _cursos_.
+|+ Calcular grado de completitud de _lecturas_, _ejercicios autocorregidos_, y _quizzes_.| ✅
 | - Filtrar/buscar estudiantes por nombre. | ✅
-| 3. Visualizarse sin problemas desde distintos tamaños de pantallas: móviles,
-   tablets y desktops.| ✅
+| 3. Visualizarse sin problemas desde distintos tamaños de pantallas: móviles, tablets y desktops.| ✅
 | 4. Incluir pruebas unitarias. | ✅
 | Resetear Descifrado | ✅
 | Interactuar con un menú | ✅
-|   - Ordenar estudiantes por completitud _general_ (porcentaje consumido/completado
-     de todos los cursos del cohort en cuestión), de _lecturas_, _ejercicios
-     autocorregidos_ y _quizzes_.  |❌
+|   - Ordenar estudiantes por completitud _general  |❌
 
 
-### IMPLEMENTACIÓN DEL PROYECTO
+## IMPLEMENTACIÓN DEL PROYECTO
 La lógica del proyecto debe estar implementada completamente en JavaScript (ES6), HTML y CSS. 
 
 Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_ y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el setup y configuración necesaria para ejecutar los tests (pruebas) usando el
@@ -152,6 +137,4 @@ comando `npm test`.
 
 
 
-
-
-
+|**Creado by Martha Anticona Zola y Mariangélica Noriega**|
