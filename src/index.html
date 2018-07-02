@@ -1,5 +1,142 @@
 <!DOCTYPE html>
 <html>
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Data Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+   
+  <section class="logo">
+    <img src="../img/images.jpg" class="logo-Header" alt="logo laboratoria">
+    <br>
+    <h1>&#60;D A T A L A B&#62;</h1>
+   
+  </section>
+
+  <div class="main">
+    <section>
+      <!--aqui van las opciones de sedes desde main.js-->
+      <strong>Sede:</strong>
+      <select id="listCountry">
+        <option value="spl">Brasil</option>
+        <option value="scl">Chile</option>
+        <option value="cdmx">México</option>
+        <option value="lim">Perú</option>
+        <option value="gdl">México-Guadalajara</option>
+        <option value="aqp">Perú-Arequipa</option>
+      </select>
+      <strong>Cohorts:</strong>
+      <select id="listcohorts">
+      </select>
+    </section>
+  </div>
+
+  <div class="container">
+    <div class="firstblock">
+      <br>
+      <input type="text" id="searchUsers" maxlength="12" name="q" placeholder="Buscar por nombre">
+
+      <section>
+        <br>
+        <strong>Estudiantes:</strong>
+        <br>
+        <br>
+        <select id="listusers" multiple>
+          <!--aqui van las opciones creadas desde main.js-->
+        </select>
+      </section>
+    </div>
+
+    <section>
+      <div class="secondblock">
+        <p id="prueba">RESULTADOS DE LA ESTUDIANTE DE LABORATORIA</p>
+        <div class="table" id="generaltable">
+          <table>
+            <tr id="General">
+            </tr>
+            <br>
+            <tr id="generalexercises">
+            </tr>
+            <br>
+            <tr id="generalreadings">
+            </tr>
+            <br>
+            <tr id="generalquiz">
+            </tr>
+            <br>
+            <tr id="generalscore">
+            </tr>
+          </table>
+        </div>
+
+        <div class="table" id="unitonetable">
+          <table>
+            <tr id="unit1">
+            </tr>
+            <br>
+            <tr id="1Unitreading">
+            </tr>
+            <br>
+            <tr id="1Unitquiz">
+            </tr>
+            <br>
+            <tr id="1Uscore">
+            </tr>
+          </table>
+        </div>
+
+        <div class="table" id="unittwotable">
+          <table>
+            <tr id="unit2">
+            </tr>
+            <br>
+            <tr id="2UnitExercises">
+            </tr>
+            <br>
+            <tr id="2Unitreading">
+            </tr>
+            <br>
+            <tr id="2Unitquiz">
+            </tr>
+            <br>
+            <tr id="2Uscore">
+            </tr>
+          </table>
+        </div>
+
+        <div class="table" id="unitthreetable">
+          <table>
+            <tr id="unit3">
+            </tr>
+            <br>
+            <tr id="3Unitreading">
+            </tr>
+            <br>
+            <tr id="3Unitquiz">
+            </tr>
+            <br>
+            <tr id="3Uscore">
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+
+  </div>
+</body>
+
+</html>
+=======
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -140,3 +277,4 @@
     </div>
   </body>
 </html>
+
