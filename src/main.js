@@ -30,7 +30,7 @@ const Percent_User_U3_quiz=document.getElementById("3Unitquiz");
 const Qualification_User_U3_quiz=document.getElementById("3Uscore");
 
 
-function validar()
+function validar(event)
 {
   var userName = document.getElementById("userName").value;
   var pass = document.getElementById("pass").value;
