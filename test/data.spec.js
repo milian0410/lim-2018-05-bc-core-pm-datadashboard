@@ -75,22 +75,33 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-
     it('debería retornar arreglo de usuarios ordenado por nombre ASC');
     
+    assert.equal(sortUsers(processed, "Nombre", "ASC")[0].name, "adriana vizcarra paitán");
+
     
 
     it('debería retornar arreglo de usuarios ordenado por nombre DESC');
 
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
+
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
+
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
+
     it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
+
     it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
+
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
+
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
+
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
+
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
 
   });

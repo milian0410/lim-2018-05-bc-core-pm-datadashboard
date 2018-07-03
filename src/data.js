@@ -240,26 +240,29 @@ const computeUsersStats = (users, progress, courses) =>
       }
 
     });
-    console.log('data.js', 'users 220')
-    console.log(users)
+    console.log(users);
+    
     return users
   }
 
 const processCohortData = (options) => {
-  courses=options[0].coursesIndex;
-  users=options[1];
-  progress=options[2]; 
+  
+  courses=options[0].cohort.coursesIndex;
+  users=options[0].cohortData.users;
+  progress=options[0].cohortData.progress; 
+  orderBy=options[0].orderBy;
+  orderDirection=options[0].orderDirection;
  let compudetdata= computeUsersStats (users, progress, courses) ;
-  console.log('data.js', 'compudetdata 231')
-  console.log(compudetdata);
-  return compudetdata
+
+ let ordenUsers =sortUsers (compudetdata, orderBy, orderDirection) 
+  return ordenUsers
 }
 
 const sortUsers = (users, orderBy, orderDirection) => {
 //nombre
 if(orderBy === "Nombre")
 {
- if(orderDirection ==="DESC")
+ if(orderDirection ==="ASC")
  {
     users.sort(function(a, b)
     {
@@ -270,10 +273,9 @@ if(orderBy === "Nombre")
     if (nameA > nameB)
         return 1
     return 0 
-      console.log(users);
     })
  }
- if(orderDirection ==="ASC")
+ if(orderDirection ==="DESC")
  {
     users.sort(function(a, b)
     {
@@ -284,24 +286,12 @@ if(orderBy === "Nombre")
     if (nameA > nameB)
         return -1
     return 0 
-      console.log(users);
     })
  }  
 } 
 //porcentaje
 if(orderBy === "Porcentaje")
 {
-  if(orderDirection ==="DESC")
-  {
-    users.sort(function(a, b)
-    {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
-    
-    return nameA-nameB 
-    console.log(users);
-    })
-  }
   if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
@@ -309,15 +299,24 @@ if(orderBy === "Porcentaje")
     let nameA=a.stats.percent;
     let nameB=b.stats.percent;
     
+    return nameA-nameB 
+    })
+  }
+  if(orderDirection ==="DESC")
+  {
+    users.sort(function(a, b)
+    {
+    let nameA=a.stats.percent;
+    let nameB=b.stats.percent;
+    
     return nameB-nameA 
-    console.log(users);
     })
   }
 }   
 //"Ejercicios"
 if(orderBy === "Ejercicios")
 {
-  if(orderDirection ==="DESC")
+  if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
     {
@@ -325,10 +324,9 @@ if(orderBy === "Ejercicios")
     let nameB=b.stats.percent;
     
     return nameA-nameB 
-    console.log(users);
     })
   }
-  if(orderDirection ==="ASC")
+  if(orderDirection ==="DESC")
   {
     users.sort(function(a, b)
     {
@@ -336,14 +334,13 @@ if(orderBy === "Ejercicios")
     let nameB=b.stats.percent;
     
     return nameB-nameA 
-    console.log(users);
     })
   }
 }     
 //"Lectura"
 if(orderBy === "Lectura")
 {
-  if(orderDirection ==="DESC")
+  if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
     {
@@ -351,10 +348,9 @@ if(orderBy === "Lectura")
     let nameB=b.stats.percent;
     
     return nameA-nameB 
-    console.log(users);
     })
   }
-  if(orderDirection ==="ASC")
+  if(orderDirection ==="DESC")
   {
     users.sort(function(a, b)
     {
@@ -369,17 +365,6 @@ if(orderBy === "Lectura")
 // "Quizes"           
 if(orderBy === "Quizes")
 {
-  if(orderDirection ==="DESC")
-  {
-    users.sort(function(a, b)
-    {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
-    
-    return nameA-nameB 
-    console.log(users);
-    })
-  }
   if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
@@ -387,24 +372,22 @@ if(orderBy === "Quizes")
     let nameA=a.stats.percent;
     let nameB=b.stats.percent;
     
+    return nameA-nameB 
+    })
+  }
+  if(orderDirection ==="DESC")
+  {
+    users.sort(function(a, b)
+    {
+    let nameA=a.stats.percent;
+    let nameB=b.stats.percent;
+    
     return nameB-nameA 
-    console.log(users);
     })
   }
 }             
 if(orderBy === "PQuizes")
 {
-  if(orderDirection ==="DESC")
-  {
-    users.sort(function(a, b)
-    {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
-    
-    return nameA-nameB 
-    console.log(users);
-    })
-  }
   if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
@@ -412,29 +395,32 @@ if(orderBy === "PQuizes")
     let nameA=a.stats.percent;
     let nameB=b.stats.percent;
     
+    return nameA-nameB 
+    })
+  }
+  if(orderDirection ==="DESC")
+  {
+    users.sort(function(a, b)
+    {
+    let nameA=a.stats.percent;
+    let nameB=b.stats.percent;
+    
     return nameB-nameA 
-    console.log(users);
     })
   }
 }  
  return users
- console.log(users);
  
 }
 
 const filterUsers = (users, search) => {
-  users.forEach(traveluser=>{
-    if (traveluser.hasOwnProperty('name') ) {        
-      const Name_user=traveluser.name;          
-      if(Name_user === search){
-       const nameuser = traveluser.stats;
-       return nameuser
 
-  }
-  
-}
-})
-console.log(users);
+ let  filtering_users=users.filter(
+  filtering_users.name.toLowerCase().indexOf(search.toLowerCase()) > -1
+ 
+ );
+
+ return filtering_users
 
 }
 
