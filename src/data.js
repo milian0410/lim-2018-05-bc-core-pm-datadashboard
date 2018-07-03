@@ -423,17 +423,7 @@ const filterUsers = (users, search) => {
  return filtering_users
 }
 
-const processCohortData = (options) => {
-  courses = options[0].coursesIndex;
-  users = options[1];
-  progress = options[2];
 
-  let compudetdata = computeUsersStats(users, progress, courses);
-  console.log('data.js', 'compudetdata 231')
-  console.log(compudetdata);
-
-  return compudetdata
-}
 
 
 
