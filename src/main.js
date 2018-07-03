@@ -36,7 +36,7 @@ function validar()
   var pass = document.getElementById("pass").value;
   if(userName == "Alejandra" && pass == "12345")
   {
-   location.href= "../src/index.html";
+   location.href= "http://127.0.0.1:5500/src/index.html";
   }
   else
   {
