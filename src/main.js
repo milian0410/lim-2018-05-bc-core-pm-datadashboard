@@ -84,6 +84,25 @@ selection.addEventListener("change", (event) =>
   }
 })
 
+let nameUser = document.getElementById("searchUsers");
+
+//filtrando usuarios
+nameUser.addEventListener("keyup", (event) => {
+  
+  AllData((data) => {
+    let users = data[1];
+    nameSelect = nameUser.value.toUpperCase();
+    for (i = 0; i < selectionusers.length; i++) {
+      let name = selectionusers[i].innerHTML.toUpperCase();
+      if (name.indexOf(nameSelect) > -1) {
+        selectionusers[i].style.display = "";
+      } else {
+        selectionusers[i].style.display = "none";
+      }
+    }
+  })
+})
+
 /*bottonfilter.addEventListener("click",()=>{
   const search=textfilter.value;
   const search_user=search.toLowerCase();
