@@ -169,14 +169,32 @@ describe('data', () => {
   });
 
   describe('filterUsers(users, filterBy)', () => {
+    const usersFilter = fixtures.users;
 
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)',()=>{
+      const filter=filterUsers(usersFilter,"maria")
+      assert.equal(filter[0].name,"Maria del Carmen Samaniego Chunga")
+
+    });
 
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
 
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter');
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
+      const processed = processCohortData(option);
+      assert.equal(users.length, processed.length);
+
+      processed.forEach(user => {
+        assert.ok(user.hasOwnProperty('stats'));
+        assert.isNumber(user.stats.percent);
+        assert.isObject(user.stats.exercises);
+        assert.isObject(user.stats.quizzes);
+        assert.isObject(user.stats.reads);
+      });
+      
+
+    });
 
   });
 

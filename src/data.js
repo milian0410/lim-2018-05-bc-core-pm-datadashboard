@@ -243,18 +243,7 @@ const computeUsersStats = (users, progress, courses) =>
     return users
   }
 
-const processCohortData = (options) => {
-  
-  courses=options.cohort.coursesIndex;
-  users=options.cohortData.users;
-  progress=options.cohortData.progress; 
-  orderBy=options.orderBy;
-  orderDirection=options.orderDirection;
- let compudetdata= computeUsersStats (users, progress, courses) ;
 
- let ordenUsers =sortUsers (compudetdata, orderBy, orderDirection) 
-  return ordenUsers
-}
 
 const sortUsers = (users, orderBy, orderDirection) => {
 //nombre
@@ -413,15 +402,29 @@ if(orderBy === "PQuizes")
 }
 
 const filterUsers = (users, search) => {
-
- let  filtering_users=users.filter(
-  filtering_users.name.toLowerCase().indexOf(search.toLowerCase()) > -1
- 
- );
-
- return filtering_users
+  console.log(users);
+  
+  return users.filter((user) => {
+    return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
+  })
+  
+  
 }
+const processCohortData = (options) => {
+  
+  courses=options.cohort.coursesIndex;
+  users=options.cohortData.users;
+  progress=options.cohortData.progress; 
+  orderBy=options.orderBy;
+  orderDirection=options.orderDirection;
+  searchName=options.search;
+ let compudetdata= computeUsersStats (users, progress, courses) ;
 
+ let ordenUsers =sortUsers (compudetdata, orderBy, orderDirection);
+ let searchNmame= filterUsers(ordenUsers, searchName);
+ 
+  return searchNmame
+}
 
 
 

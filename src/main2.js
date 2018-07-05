@@ -9,7 +9,7 @@ let option ={
     },
     orderBy: "alazar",
     orderDirection:"alazar",
-    search:null,
+    search:"",
   } ;
   console.log(option);
   
@@ -58,7 +58,7 @@ const Select_ASC_or_DESC = (Callback) => {
       }
 const nameSelect = (Callback) => {
 
-    search_botton.addEventListener("click", () => {
+    botton_orden.addEventListener("click", () => {
          let search_filter = search_user_in_table_orden.value.toUpperCase();
          console.log(search_filter);
           Callback(search_filter)
