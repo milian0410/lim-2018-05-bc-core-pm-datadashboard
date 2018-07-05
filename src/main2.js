@@ -1,3 +1,19 @@
+
+// juntando toda la informacion del json con que quiere ordenar y si es asc o desc
+let option ={
+    cohort:null,
+    cohortData: 
+    {
+      users: null,
+      progress: null,
+    },
+    orderBy: "alazar",
+    orderDirection:"alazar",
+    search:null,
+  } ;
+  console.log(option);
+  
+
 //anidando data de js
 const AllData = (Callback) => 
 {
@@ -39,32 +55,38 @@ const Select_ASC_or_DESC = (Callback) => {
         console.log(orderAsd_des);
         Callback(orderAsd_des)
       })
-    }
+      }
+const nameSelect = (Callback) => {
+
+    search_botton.addEventListener("click", () => {
+         let search_filter = search_user_in_table_orden.value.toUpperCase();
+         console.log(search_filter);
+          Callback(search_filter)
+        }) 
+    }    
 
 // juntando toda la informacion del json con que quiere ordenar y si es asc o desc
 const alldatawithorden = (Callback) =>{
     AllData((data)=>
     {
-        Select_ordenvalue((ordenvalue)=>
-        {
-            Select_ASC_or_DESC((orderAsd_des)=>
-            {
-                let option =[{
-                    cohort:data[0],
-                    cohortData: 
-                    {
-                      users: data[1],
-                      progress: data[2]
-                    },
-                    orderBy: ordenvalue,
-                    orderDirection: orderAsd_des,
-                  }] ;
-             
-             Callback(option)
-              
-            })
+        option.cohort=data[0];
+        option.cohortData.users=data[1];
+        option.cohortData.progress=data[2];
+        
+        Select_ordenvalue((ordenvalue)=>{
+          option.orderBy=ordenvalue;  
         })
+        Select_ASC_or_DESC((orderAsd_des)=>{
+            option.orderDirection=orderAsd_des;
+         
+       
+        })
+        nameSelect((search_filter)=>{
+            option.search=search_filter;   
+        })
+
+        Callback(option)
     })
-} 
+}
 
  

@@ -28,7 +28,9 @@ const Percent_User_U3=document.getElementById("unit3");
 const Percent_User_U3_read=document.getElementById("3Unitreading");
 const Percent_User_U3_quiz=document.getElementById("3Unitquiz");
 const Qualification_User_U3_quiz=document.getElementById("3Uscore");
-
+let nameUser = document.getElementById("searchUsers");
+let search_user_in_table_orden=document.getElementById("search");
+let search_botton=document.getElementById("botton-filter");
 
 function validar()
 {
@@ -79,12 +81,12 @@ selection.addEventListener("change", (event) =>
         let userid=user_element.id;
         let nameuser=user_element.name;
         selectionusers.innerHTML+= "<option value=" +userid +" >" +nameuser + "</option>";
-      };  
+      }; 
+     
     })
   }
 })
 
-let nameUser = document.getElementById("searchUsers");
 
 //filtrando usuarios
 nameUser.addEventListener("keyup", (event) => {

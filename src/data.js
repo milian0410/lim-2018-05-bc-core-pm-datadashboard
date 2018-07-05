@@ -239,19 +239,17 @@ const computeUsersStats = (users, progress, courses) =>
         }
       }
 
-    });
-    console.log(users);
-    
+    });    
     return users
   }
 
 const processCohortData = (options) => {
   
-  courses=options[0].cohort.coursesIndex;
-  users=options[0].cohortData.users;
-  progress=options[0].cohortData.progress; 
-  orderBy=options[0].orderBy;
-  orderDirection=options[0].orderDirection;
+  courses=options.cohort.coursesIndex;
+  users=options.cohortData.users;
+  progress=options.cohortData.progress; 
+  orderBy=options.orderBy;
+  orderDirection=options.orderDirection;
  let compudetdata= computeUsersStats (users, progress, courses) ;
 
  let ordenUsers =sortUsers (compudetdata, orderBy, orderDirection) 
@@ -320,8 +318,8 @@ if(orderBy === "Ejercicios")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.exercises.percent;
+    let nameB=b.stats.exercises.percent;
     
     return nameA-nameB 
     })
@@ -330,8 +328,8 @@ if(orderBy === "Ejercicios")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.exercises.percent;
+    let nameB=b.stats.exercises.percent;
     
     return nameB-nameA 
     })
@@ -344,8 +342,8 @@ if(orderBy === "Lectura")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.reads.percent;
+    let nameB=b.stats.reads.percent;
     
     return nameA-nameB 
     })
@@ -354,8 +352,8 @@ if(orderBy === "Lectura")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.reads.percent;
+    let nameB=b.stats.reads.percent;
     
     return nameB-nameA 
     console.log(users);
@@ -369,8 +367,8 @@ if(orderBy === "Quizes")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.quizzes.scoreAvg;
+    let nameB=b.stats.quizzes.scoreAvg;
     
     return nameA-nameB 
     })
@@ -379,21 +377,22 @@ if(orderBy === "Quizes")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.quizzes.scoreAvg;
+    let nameB=b.stats.quizzes.scoreAvg;
     
     return nameB-nameA 
     })
   }
-}             
+}  
+//porcentaje de quizes completados           
 if(orderBy === "PQuizes")
 {
   if(orderDirection ==="ASC")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.quizzes.percent;
+    let nameB=b.stats.quizzes.percent;
     
     return nameA-nameB 
     })
@@ -402,8 +401,8 @@ if(orderBy === "PQuizes")
   {
     users.sort(function(a, b)
     {
-    let nameA=a.stats.percent;
-    let nameB=b.stats.percent;
+    let nameA=a.stats.quizzes.percent;
+    let nameB=b.stats.quizzes.percent;
     
     return nameB-nameA 
     })

@@ -28,6 +28,8 @@
       <div class="firstblock">
         
           <input type="text" id="searchUsers" maxlength="12" name="q" placeholder="Buscar por nombre">
+          <input type="text" id="search" maxlength="12" name="q" placeholder="Buscar en tabla de ordenado">
+          <input type="button" id="botton-filter" value="buscar">
 
         <section >
             <select id="listcohorts" > 
@@ -47,6 +49,7 @@
                 <p>Ordenar por:</p>
 
                 <select id="listorder">
+                  <option >Ordenar por:</option>
                   <option value="Porcentaje">Porcentaje General</option>
                   <option value="Nombre">Nombre</option>
                   <option value="Ejercicios">Porcentaje Ejercicios</option>
@@ -59,6 +62,7 @@
                   <!--aqui van las opciones ASC Y DESC-->
                   <p>Ordenar por:</p>
                   <select id="listASD/DESC">
+                    <option >Ordenar por:</option>
                     <option value="ASC">ASC</option>
                     <option value="DESC">DESC</option>
                   </select>

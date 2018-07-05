@@ -75,34 +75,96 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
+   
+    let cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+    let courses = Object.keys(cohort.coursesIndex);
+    let { users, progress } = fixtures;
+    let lista = computeUsersStats(users, progress, courses);
+ 
+
+    console.debug("orden");
+    it('debería retornar arreglo de usuarios ordenado por nombre ASC',()=>{
+    const orden=sortUsers(lista ,"Nombre" ,"ASC");
+    console.debug("orden");
+    console.debug(orden);
+    assert.equal(orden[0].name,"adriana vizcarra paitán")});
+
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC',()=>{
+      const orden=sortUsers(lista ,"Nombre" ,"DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].name,"Zurisadai Rosas Aramburú") 
+    });
     
-    assert.equal(sortUsers(processed, "Nombre", "ASC")[0].name, "adriana vizcarra paitán");
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC',()=>{
+      const orden=sortUsers(lista ,"Porcentaje" ,"ASC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.percent,0) 
+    });
 
-    
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC',()=>{
+      const orden=sortUsers(lista ,"Porcentaje" ,"DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.percent,100) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC',()=>{
+      const orden=sortUsers(lista ,"Ejercicios" ,"ASC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.exercises.percent,0) 
+    });
 
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC',()=>{
+      const orden=sortUsers(lista ,"Ejercicios" ,"DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.exercises.percent,100) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC',()=>{
+      const orden=sortUsers(lista ,"PQuizes" ,"ASC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.quizzes.percent,0) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC',()=>{
+      const orden=sortUsers(lista ,"PQuizes" ,"DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.quizzes.percent,100) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC',()=>{
+      const orden=sortUsers(lista ,"Quizes" ,"ASC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.quizzes.scoreAvg,0) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC',()=>{
+      const orden=sortUsers(lista ,"Quizes" ,"DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.quizzes.scoreAvg,99) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC',()=>{
+      const orden=sortUsers(lista ,"Lectura","ASC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.reads.percent,0) 
+    });
 
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
-
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
-
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
-
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
-
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC',()=>{
+      const orden=sortUsers(lista ,"Lectura","DESC");
+      console.debug("orden");
+      console.debug(orden);
+      assert.equal(orden[0].stats.reads.percent,100) 
+    });
 
   });
 
